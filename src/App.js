@@ -1,8 +1,9 @@
 import React from "react";
-import "./App.css";
+import styles from "./App.module.css";
+import Portfolio from "./pages/portfolio/Portfolio";
 
 function App() {
-  return <div className="App"></div>;
+  return <Portfolio />;
 }
 
 export default App;

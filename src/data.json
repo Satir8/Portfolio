@@ -1,0 +1,113 @@
+[
+  {
+    "title": "perfect body app",
+    "preview": "perfectBody_preview@0,5x.jpg",
+    "url": "https://perfect-body.netlify.com",
+    "img": "perfectBody_preview.jpg",
+    "tags": [
+      "HTML5",
+      "CSS3",
+      "React JS",
+      "Redux",
+      "Webpack",
+      "React Router",
+      "AJAX"
+    ],
+    "description": ""
+  },
+  {
+    "title": "filmoteka",
+    "preview": "Filmoteka@0,5x.jpg",
+    "url": "https://satir8.github.io/filmoteka",
+    "img": "Filmoteka.jpg",
+    "tags": ["HTML5", "SASS", "Vanilla JS", "Gulp", "API"],
+    "description": ""
+  },
+  {
+    "title": "icecream with passion",
+    "preview": "IceCream_withPassion@0,5x.jpg",
+    "url": "https://satir8.github.io/icecream-with-passion",
+    "img": "IceCream_withPassion.jpg",
+    "tags": ["HTML5", "SASS", "Gulp"],
+    "description": ""
+  },
+  {
+    "title": "Movie Finder",
+    "preview": "MovieFinder@0,5x.jpg",
+    "url": "https://satir-multipage-moviefinder.netlify.com",
+    "img": "MovieFinder.jpg",
+    "tags": ["HTML5", "CSS3", "React JS", "React Router", "Webpack", "API"],
+    "description": ""
+  },
+  {
+    "title": "Phonebook",
+    "preview": "Phonebook@0,5x.jpg",
+    "url": "https://react-phonebook.netlify.com",
+    "img": "Phonebook.jpg",
+    "tags": [
+      "HTML5",
+      "CSS3",
+      "React JS",
+      "Redux",
+      "Webpack",
+      "React Animation"
+    ],
+    "description": ""
+  },
+  {
+    "title": "Image Finder",
+    "preview": "ImageFinder@0,5x.jpg",
+    "url": "https://satir8.github.io/ReactImageFinder",
+    "img": "ImageFinder.jpg",
+    "tags": ["HTML5", "CSS3", "React JS", "Webpack", "API"],
+    "description": ""
+  },
+  {
+    "title": "Mobile App",
+    "preview": "MobileApp@0,5x.jpg",
+    "url": "https://satir8.github.io/MobileApp/",
+    "img": "MobileApp.jpg",
+    "tags": ["HTML5", "SASS", "Gulp"],
+    "description": ""
+  },
+  {
+    "title": "County Finder",
+    "preview": "CountyFinder@0,5x.jpg",
+    "url": "https://satir8.github.io/Country-finder",
+    "img": "CountyFinder.jpg",
+    "tags": ["HTML5", "CSS3", "Vanilla JS", "Webpack", "API"],
+    "description": ""
+  },
+  {
+    "title": "Collection With Themes",
+    "preview": "CollectionWithThemes@0,5x.jpg",
+    "url": "https://satir8.github.io/CollectionWithThemes",
+    "img": "CollectionWithThemes.jpg",
+    "tags": ["HTML5", "CSS3", "Vanilla JS", "Webpack", "JSON"],
+    "description": ""
+  },
+  {
+    "title": "Picture Collection Slider",
+    "preview": "PictureCollectionSlider@0,5x.jpg",
+    "url": "https://satir8.github.io/PictureCollectionSlider",
+    "img": "PictureCollectionSlider.jpg",
+    "tags": ["HTML5", "CSS3", "Vanilla JS", "JSON"],
+    "description": ""
+  },
+  {
+    "title": "Countdown timer",
+    "preview": "CountdownTimer@0,5x.jpg",
+    "url": "https://satir8.github.io/Countdown_timer",
+    "img": "CountdownTimer.jpg",
+    "tags": ["HTML5", "CSS3", "Vanilla JS"],
+    "description": ""
+  },
+  {
+    "title": "Mogo",
+    "preview": "Mogo@0,5x.jpg",
+    "url": "https://satir8.github.io/Mogo",
+    "img": "Mogo.jpg",
+    "tags": ["HTML5", "SASS", "Gulp"],
+    "description": ""
+  }
+]
