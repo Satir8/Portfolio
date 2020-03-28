@@ -36,10 +36,10 @@ class Modal extends Component {
         <div className={styles.modal}>
           <h2 className={styles.modal__title}>title</h2>
           <p className={styles.modal__description}>description</p>
-          {/* <Link target="_blank">visit the website</Link> */}
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          {/* <Link to="#" target="_blank">
             visit the website
-          </a>
+          </Link> */}
+
           <img src="" alt="" className={styles.modal__Image} />
           <h2 className={styles.modal__title}>about title</h2>
           <p className={styles.modal__description}>about description</p>
@@ -48,7 +48,7 @@ class Modal extends Component {
             Code technologies I got involved with while working on this project.
           </p>
           <ul className={styles.modal__techList}>
-            <li className={styles.techList__item}></li>
+            <li className={styles.techList__item}>Feature</li>
           </ul>
         </div>
       </div>

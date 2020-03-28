@@ -16,7 +16,11 @@ class Portfolio extends Component {
   }
 
   handleOpenModal = e => {
-    // const imgId = Number(e.target.id);
+    // const targetId = e.target;
+    console.log(e.target);
+    console.log(e.target.id);
+    // console.dir(e.target);
+    // console.log(id);
     // this.setState(prev => {
     //   const targetImg = prev.pictures.filter(item => item.id === imgId);
     //   return {
@@ -38,33 +42,42 @@ class Portfolio extends Component {
       <>
         <h2>Portfolio</h2>
         <ul className={styles.list}>
-          {data.map(({ title, preview, tags, id }) => (
-            <li
-              className={styles.list__item}
-              key={id}
-              onClick={this.handleOpenModal}
-            >
-              <div className={styles.item_bar}>
-                <h2 className={styles.barHeading}>{title}</h2>
-              </div>
-              <div className={styles.item__main}>
-                <img
-                  className={styles.item__img}
-                  src={require(`../../img/preview/${preview}`)}
-                  alt="project preview"
-                />
-                <div className={styles.tags}>
-                  <ul className={styles.tags__list}>
-                    {tags.map((item, idx) => (
-                      <li className={styles.tags__item} key={idx}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+          {data.map(({ title, preview, tags, id }) => {
+            // console.log(id);
+            return (
+              <li
+                className={styles.list__item}
+                key={id}
+                // id={id}
+                // onClick={this.handleOpenModal}
+              >
+                <div
+                  className={styles.wrapper}
+                  id={id}
+                  onClick={this.handleOpenModal}
+                ></div>
+                <div className={styles.item_bar}>
+                  <h2 className={styles.barHeading}>{title}</h2>
                 </div>
-              </div>
-            </li>
-          ))}
+                <div className={styles.item__main}>
+                  <img
+                    className={styles.item__img}
+                    src={require(`../../img/preview/${preview}`)}
+                    alt="project preview"
+                  />
+                  <div className={styles.tags}>
+                    <ul className={styles.tags__list}>
+                      {tags.map((item, idx) => (
+                        <li className={styles.tags__item} key={idx}>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
         </ul>
         {isModal && <Modal onCloseModal={this.handleCloseModal} />}
       </>
