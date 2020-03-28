@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./App.module.css";
+import "./App.css";
 import Portfolio from "./pages/portfolio/Portfolio";
 
 function App() {

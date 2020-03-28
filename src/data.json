@@ -4,16 +4,8 @@
     "preview": "perfectBody_preview@0,5x.jpg",
     "url": "https://perfect-body.netlify.com",
     "img": "perfectBody_preview.jpg",
-    "tags": [
-      "HTML5",
-      "CSS3",
-      "React JS",
-      "Redux",
-      "Webpack",
-      "React Router",
-      "AJAX"
-    ],
-    "description": ""
+    "tags": ["HTML5", "CSS3", "React JS", "Redux", "Webpack", "React Router"],
+    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
   },
   {
     "title": "filmoteka",
@@ -21,7 +13,7 @@
     "url": "https://satir8.github.io/filmoteka",
     "img": "Filmoteka.jpg",
     "tags": ["HTML5", "SASS", "Vanilla JS", "Gulp", "API"],
-    "description": ""
+    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
   },
   {
     "title": "icecream with passion",
@@ -29,7 +21,7 @@
     "url": "https://satir8.github.io/icecream-with-passion",
     "img": "IceCream_withPassion.jpg",
     "tags": ["HTML5", "SASS", "Gulp"],
-    "description": ""
+    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
   },
   {
     "title": "Movie Finder",
@@ -37,7 +29,7 @@
     "url": "https://satir-multipage-moviefinder.netlify.com",
     "img": "MovieFinder.jpg",
     "tags": ["HTML5", "CSS3", "React JS", "React Router", "Webpack", "API"],
-    "description": ""
+    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
   },
   {
     "title": "Phonebook",
@@ -52,7 +44,7 @@
       "Webpack",
       "React Animation"
     ],
-    "description": ""
+    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
   },
   {
     "title": "Image Finder",
@@ -60,7 +52,7 @@
     "url": "https://satir8.github.io/ReactImageFinder",
     "img": "ImageFinder.jpg",
     "tags": ["HTML5", "CSS3", "React JS", "Webpack", "API"],
-    "description": ""
+    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
   },
   {
     "title": "Mobile App",
@@ -68,7 +60,7 @@
     "url": "https://satir8.github.io/MobileApp/",
     "img": "MobileApp.jpg",
     "tags": ["HTML5", "SASS", "Gulp"],
-    "description": ""
+    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
   },
   {
     "title": "County Finder",
@@ -76,7 +68,7 @@
     "url": "https://satir8.github.io/Country-finder",
     "img": "CountyFinder.jpg",
     "tags": ["HTML5", "CSS3", "Vanilla JS", "Webpack", "API"],
-    "description": ""
+    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
   },
   {
     "title": "Collection With Themes",
@@ -84,7 +76,7 @@
     "url": "https://satir8.github.io/CollectionWithThemes",
     "img": "CollectionWithThemes.jpg",
     "tags": ["HTML5", "CSS3", "Vanilla JS", "Webpack", "JSON"],
-    "description": ""
+    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
   },
   {
     "title": "Picture Collection Slider",
@@ -92,7 +84,7 @@
     "url": "https://satir8.github.io/PictureCollectionSlider",
     "img": "PictureCollectionSlider.jpg",
     "tags": ["HTML5", "CSS3", "Vanilla JS", "JSON"],
-    "description": ""
+    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
   },
   {
     "title": "Countdown timer",
@@ -100,7 +92,7 @@
     "url": "https://satir8.github.io/Countdown_timer",
     "img": "CountdownTimer.jpg",
     "tags": ["HTML5", "CSS3", "Vanilla JS"],
-    "description": ""
+    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
   },
   {
     "title": "Mogo",
@@ -108,6 +100,6 @@
     "url": "https://satir8.github.io/Mogo",
     "img": "Mogo.jpg",
     "tags": ["HTML5", "SASS", "Gulp"],
-    "description": ""
+    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
   }
 ]

@@ -7,7 +7,8 @@ import styles from "./Portfolio.module.css";
 class Portfolio extends Component {
   state = {
     data: [],
-    isModal: false
+    isModal: false,
+    modalObject: {}
   };
 
   componentDidMount() {
@@ -16,19 +17,11 @@ class Portfolio extends Component {
   }
 
   handleOpenModal = e => {
-    // const targetId = e.target;
-    console.log(e.target);
-    console.log(e.target.id);
-    // console.dir(e.target);
-    // console.log(id);
-    // this.setState(prev => {
-    //   const targetImg = prev.pictures.filter(item => item.id === imgId);
-    //   return {
-    //     isModalOpen: true,
-    //     modalImageUrl: targetImg[0].largeImageURL
-    //   };
-    // });
-    this.setState({ isModal: true });
+    const { data } = this.state;
+    const targetId = e.target.id;
+    const targetObj = data.find(item => item.id === targetId);
+    // console.log(targetObj);
+    this.setState({ isModal: true, modalObject: targetObj });
   };
 
   handleCloseModal = e => {
@@ -36,21 +29,15 @@ class Portfolio extends Component {
   };
 
   render() {
-    const { data, isModal } = this.state;
-    // console.log(data);
+    const { data, isModal, modalObject } = this.state;
+    // console.log(modalObject);
     return (
       <>
         <h2>Portfolio</h2>
         <ul className={styles.list}>
           {data.map(({ title, preview, tags, id }) => {
-            // console.log(id);
             return (
-              <li
-                className={styles.list__item}
-                key={id}
-                // id={id}
-                // onClick={this.handleOpenModal}
-              >
+              <li className={styles.list__item} key={id}>
                 <div
                   className={styles.wrapper}
                   id={id}
@@ -79,7 +66,9 @@ class Portfolio extends Component {
             );
           })}
         </ul>
-        {isModal && <Modal onCloseModal={this.handleCloseModal} />}
+        {isModal && (
+          <Modal data={modalObject} onCloseModal={this.handleCloseModal} />
+        )}
       </>
     );
   }

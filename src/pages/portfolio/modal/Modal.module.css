@@ -1,19 +1,87 @@
 .modal {
-  background-color: rgb(255, 255, 255, 0.3);
-  width: 50vw;
-  height: 50vh;
+  position: relative;
+  width: 80vw;
+  /* height: 80vh; */
+  background-color: rgb(42, 42, 42, 1);
+  box-shadow: 0 0 50px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5%;
 }
 
 .modal__overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(42, 42, 42, 0.99);
   z-index: 1200;
 }
 
+.modal__title {
+  text-align: left;
+  font-family: "Montserrat", Tahoma, Verdana, sans-serif;
+  color: #cacaca;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  text-transform: lowercase;
+  width: 100%;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.modal__subTitle {
+  font-family: "Montserrat", Tahoma, Verdana, sans-serif;
+  font-size: 32px;
+  color: #cacaca;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  position: relative;
+  display: block;
+  letter-spacing: -0.045em;
+  padding: 0;
+}
+
+.modal__description {
+  font-family: "Lato", "Open Sans", Verdana, sans-serif;
+  color: #8a8a8a;
+  text-align: left;
+}
+
+.modal__link {
+  font-family: "Lato", "Open Sans", Verdana, sans-serif;
+}
+
+.modal__Image {
+}
+
+.modal__techList {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.techList__item {
+  text-transform: uppercase;
+  font-family: "Lato", "Open Sans", Verdana, sans-serif;
+  font-size: 16px;
+  /* opacity: 0; */
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(76, 76, 77, 0.95);
+  /* box-shadow: 0px 0px 8px 1px rgba(255, 255, 255, 0.4); */
+  border-radius: 4%;
+  padding: 4px 6px;
+  margin: 4px;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  fill: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
