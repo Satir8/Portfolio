@@ -15,8 +15,12 @@ class Modal extends Component {
   }
 
   handleKeyPress = e => {
-    if (e.code !== "Escape") return;
-    this.props.onCloseModal();
+    const { onCloseModal, onPrev, onNext } = this.props;
+    // if (e.code !== "Escape") return;
+
+    e.code === "Escape" && onCloseModal();
+    // e.code === "ArrowLeft" && onPrev();
+    // e.code === "ArrowRight" && onNext();
   };
 
   handleOverlayClick = e => {
@@ -26,9 +30,8 @@ class Modal extends Component {
   };
 
   render() {
-    const { data, onCloseModal } = this.props;
+    const { data, onCloseModal, onNext, onPrev } = this.props;
     const { title, url, img, tags, description } = data;
-    console.log(data);
     return (
       <div
         ref={this.overlayRef}
@@ -36,22 +39,27 @@ class Modal extends Component {
         className={styles.modal__overlay}
       >
         <div className={styles.modal}>
-          <h2 className={styles.modal__title}>{title}</h2>
+          <div className={styles.titleWrapper}>
+            <h2 className={styles.modal__title}>{title}</h2>
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.modal__link}
+            >
+              visit the website
+            </a>
+          </div>
           <p className={styles.modal__description}>{description}</p>
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.modal__link}
-          >
-            visit the website
-          </a>
+          <div className={styles.modal__imgWrapper}>
+            <img
+              src={require(`../../../img/preview/${img}`)}
+              alt=""
+              className={styles.modal__Image}
+            />
+            <div className={styles.modal__imgOverlay}></div>
+          </div>
 
-          <img
-            src={require(`../../../img/preview/${img}`)}
-            alt=""
-            className={styles.modal__Image}
-          />
           <h2 className={styles.modal__subTitle}>Technical Sheet</h2>
           <p className={styles.modal__description}>
             Code technologies I got involved with while working on this project.

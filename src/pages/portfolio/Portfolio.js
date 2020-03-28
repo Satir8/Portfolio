@@ -8,7 +8,8 @@ class Portfolio extends Component {
   state = {
     data: [],
     isModal: false,
-    modalObject: {}
+    modalObject: {},
+    modalIdx: 0
   };
 
   componentDidMount() {
@@ -16,12 +17,40 @@ class Portfolio extends Component {
     this.setState({ data: newData });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { modalIdx, modalObject } = this.state;
+    console.log(modalIdx);
+    console.log(modalObject);
+    // if (prevState.modalIdx !== modalIdx) {
+    //   this.setState({ modalObject: modalObject[modalIdx] });
+    // }
+  }
+
+  handleNextObject() {
+    const { data, modalIdx } = this.state;
+    modalIdx < data.length - 1
+      ? this.setState(prev => ({ modalIdx: prev.modalIdx + 1 }))
+      : this.setState({ modalIdx: 0 });
+  }
+
+  handlePrevObject() {
+    const { data, modalIdx } = this.state;
+    modalIdx - 1 < 0
+      ? this.setState({ modalIdx: data.length - 1 })
+      : this.setState(prev => ({ modalIdx: prev.modalIdx - 1 }));
+  }
+
   handleOpenModal = e => {
     const { data } = this.state;
     const targetId = e.target.id;
     const targetObj = data.find(item => item.id === targetId);
-    // console.log(targetObj);
-    this.setState({ isModal: true, modalObject: targetObj });
+    const targetIdx = data.indexOf(targetObj);
+    console.log(targetIdx);
+    this.setState({
+      isModal: true,
+      modalObject: targetObj,
+      modalIdx: targetIdx
+    });
   };
 
   handleCloseModal = e => {
@@ -30,7 +59,6 @@ class Portfolio extends Component {
 
   render() {
     const { data, isModal, modalObject } = this.state;
-    // console.log(modalObject);
     return (
       <>
         <h2>Portfolio</h2>
@@ -67,7 +95,12 @@ class Portfolio extends Component {
           })}
         </ul>
         {isModal && (
-          <Modal data={modalObject} onCloseModal={this.handleCloseModal} />
+          <Modal
+            data={modalObject}
+            onCloseModal={this.handleCloseModal}
+            onNext={this.handleNextObject}
+            onPrev={this.handlePrevObject}
+          />
         )}
       </>
     );
