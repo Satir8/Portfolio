@@ -1,6 +1,6 @@
 import React, { Component, createRef } from "react";
 // import { Link } from "react-router-dom";
-import sprite from "./sprite.svg";
+import sprite from "../../../img/icons/sprite.svg";
 import styles from "./Modal.module.css";
 
 class Modal extends Component {
@@ -30,7 +30,14 @@ class Modal extends Component {
   };
 
   render() {
-    const { data, onCloseModal, onNext, onPrev } = this.props;
+    const {
+      data,
+      onCloseModal,
+      onNext,
+      onPrev,
+      nextObjTitle,
+      prevObjTitle
+    } = this.props;
     const { title, url, img, tags, description } = data;
     return (
       <div
@@ -38,6 +45,20 @@ class Modal extends Component {
         onClick={e => this.handleOverlayClick(e)}
         className={styles.modal__overlay}
       >
+        <div className={styles.arrowWrapper}>
+          <div className={styles.inlineArrowWrapper} onClick={onPrev}>
+            <svg className={styles.modal__arrows}>
+              <use href={sprite + "#left"} />
+            </svg>
+            <p className={styles.arrowObjTitle}>{prevObjTitle}</p>
+          </div>
+          <div className={styles.inlineArrowWrapper} onClick={onNext}>
+            <p className={styles.arrowObjTitle}>{nextObjTitle}</p>
+            <svg className={styles.modal__arrows}>
+              <use href={sprite + "#right"} />
+            </svg>
+          </div>
+        </div>
         <div className={styles.modal}>
           <div className={styles.titleWrapper}>
             <h2 className={styles.modal__title}>{title}</h2>

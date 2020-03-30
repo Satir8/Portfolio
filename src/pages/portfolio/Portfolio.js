@@ -9,7 +9,9 @@ class Portfolio extends Component {
     data: [],
     isModal: false,
     modalObject: {},
-    modalIdx: 0
+    modalIdx: 0,
+    prevObjTitle: "",
+    nextObjTitle: ""
   };
 
   componentDidMount() {
@@ -18,27 +20,31 @@ class Portfolio extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { modalIdx, modalObject } = this.state;
-    console.log(modalIdx);
-    console.log(modalObject);
-    // if (prevState.modalIdx !== modalIdx) {
-    //   this.setState({ modalObject: modalObject[modalIdx] });
-    // }
+    const { data, modalIdx } = this.state;
+    const prevObj = modalIdx - 1 < 0 ? data.length - 1 : modalIdx - 1;
+    const nextObj = modalIdx < data.length - 1 ? modalIdx + 1 : 0;
+    if (prevState.modalIdx !== modalIdx) {
+      this.setState({
+        modalObject: data[modalIdx],
+        prevObjTitle: data[prevObj].title,
+        nextObjTitle: data[nextObj].title
+      });
+    }
   }
 
-  handleNextObject() {
+  handleNextObject = () => {
     const { data, modalIdx } = this.state;
     modalIdx < data.length - 1
       ? this.setState(prev => ({ modalIdx: prev.modalIdx + 1 }))
       : this.setState({ modalIdx: 0 });
-  }
+  };
 
-  handlePrevObject() {
+  handlePrevObject = () => {
     const { data, modalIdx } = this.state;
     modalIdx - 1 < 0
       ? this.setState({ modalIdx: data.length - 1 })
       : this.setState(prev => ({ modalIdx: prev.modalIdx - 1 }));
-  }
+  };
 
   handleOpenModal = e => {
     const { data } = this.state;
@@ -58,7 +64,13 @@ class Portfolio extends Component {
   };
 
   render() {
-    const { data, isModal, modalObject } = this.state;
+    const {
+      data,
+      isModal,
+      modalObject,
+      prevObjTitle,
+      nextObjTitle
+    } = this.state;
     return (
       <>
         <h2>Portfolio</h2>
@@ -96,6 +108,8 @@ class Portfolio extends Component {
         </ul>
         {isModal && (
           <Modal
+            nextObjTitle={nextObjTitle}
+            prevObjTitle={prevObjTitle}
             data={modalObject}
             onCloseModal={this.handleCloseModal}
             onNext={this.handleNextObject}

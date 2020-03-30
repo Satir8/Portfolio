@@ -1,10 +1,11 @@
 .modal {
   position: relative;
-  width: 80vw;
+  width: 75vw;
   /* height: 80vh; */
   background-color: rgb(42, 42, 42, 1);
   box-shadow: 0 0 50px 5px rgba(0, 0, 0, 0.5);
   border-radius: 0.5%;
+  z-index: 12;
 }
 
 .modal__overlay {
@@ -17,7 +18,43 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(42, 42, 42, 0.99);
-  z-index: 1200;
+  z-index: 10;
+}
+
+.arrowWrapper {
+  width: 95%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  z-index: 11;
+}
+
+.inlineArrowWrapper {
+  height: 100px;
+  width: 124px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.modal__arrows {
+  display: flex;
+  justify-content: flex-start;
+  width: 60px;
+  height: 80px;
+  fill: rgb(202, 202, 202);
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.6));
+}
+
+.arrowObjTitle {
+  max-width: 60px;
+  font-family: "Montserrat Medium", Tahoma, Verdana, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(202, 202, 202, 0.7);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  text-transform: lowercase;
 }
 
 .titleWrapper {
@@ -85,6 +122,7 @@
 .modal__imgWrapper {
   position: relative;
   width: 90%;
+  height: 460px;
   display: flex;
   margin: 0 auto;
   /* border-top: 5px solid rgba(121, 153, 169, 0.5); */
@@ -125,6 +163,7 @@
   right: 0;
   width: 24px;
   height: 24px;
-  fill: rgba(255, 255, 255, 0.8);
+  fill: rgb(202, 202, 202);
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.6));
   cursor: pointer;
 }
