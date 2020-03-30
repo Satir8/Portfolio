@@ -5,7 +5,7 @@
     "url": "https://perfect-body.netlify.com",
     "img": "perfectBody_preview.jpg",
     "tags": ["HTML5", "CSS3", "React JS", "Redux", "Webpack", "React Router"],
-    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
+    "description": "Perfect body is a multipage website on which you can manage your everyday diet. I was working as a team lead during making this project with four of my teammates. Pet project."
   },
   {
     "title": "Filmoteka",
@@ -13,15 +13,15 @@
     "url": "https://satir8.github.io/filmoteka",
     "img": "Filmoteka.jpg",
     "tags": ["HTML5", "SASS", "Vanilla JS", "Gulp", "API"],
-    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
+    "description": "Filmoteka is the website made on VanillaJS on which you can search and collect your favorite movies. Pet project."
   },
   {
-    "title": "Icecream passion",
+    "title": "Icecream with passion",
     "preview": "IceCream_withPassion@0,5x.jpg",
     "url": "https://satir8.github.io/icecream-with-passion",
     "img": "IceCream_withPassion.jpg",
     "tags": ["HTML5", "SASS", "Gulp"],
-    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
+    "description": "This was the first of my student projects. I worked as the team lead with two more teammates, and we tried to make it look tasty. Pet project."
   },
   {
     "title": "Movie finder",
@@ -29,7 +29,7 @@
     "url": "https://satir-multipage-moviefinder.netlify.com",
     "img": "MovieFinder.jpg",
     "tags": ["HTML5", "CSS3", "React JS", "React Router", "Webpack", "API"],
-    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
+    "description": "Movie finder is a multipage website for searching movies which is made on ReactJs with React Router Dom. For each movie, you can get additional details, such as cast and reviews. Pet project. "
   },
   {
     "title": "Phonebook",
@@ -44,7 +44,7 @@
       "Webpack",
       "React Animation"
     ],
-    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
+    "description": "The Phonebook is the feature for adding contacts that are showing in the list and can be filtered or deleted. Made with ReactJS, Redux and React Animations. Pet project."
   },
   {
     "title": "Image finder",
@@ -52,7 +52,7 @@
     "url": "https://satir8.github.io/ReactImageFinder",
     "img": "ImageFinder.jpg",
     "tags": ["HTML5", "CSS3", "React JS", "Webpack", "API"],
-    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
+    "description": "Image finder can help you to get all the pictures that you're interested in, just write a word to the input field. Pet project."
   },
   {
     "title": "Mobile app",
@@ -60,7 +60,7 @@
     "url": "https://satir8.github.io/MobileApp/",
     "img": "MobileApp.jpg",
     "tags": ["HTML5", "SASS", "Gulp"],
-    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
+    "description": "The Mobile app is a regular one-page website, made with beautiful transitions and holds some video inside. Pet project."
   },
   {
     "title": "County finder",
@@ -68,7 +68,7 @@
     "url": "https://satir8.github.io/Country-finder",
     "img": "CountyFinder.jpg",
     "tags": ["HTML5", "CSS3", "Vanilla JS", "Webpack", "API"],
-    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
+    "description": "Country finder is the feature that can help you get detailed information about a country that you want to know more about. Pet project."
   },
   {
     "title": "Collection with themes",
@@ -76,7 +76,7 @@
     "url": "https://satir8.github.io/CollectionWithThemes",
     "img": "CollectionWithThemes.jpg",
     "tags": ["HTML5", "CSS3", "Vanilla JS", "Webpack", "JSON"],
-    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
+    "description": "This collection has two options for a visual theme, dark and light. Which one do you prefer? Pet project."
   },
   {
     "title": "Picture slider",
@@ -84,7 +84,7 @@
     "url": "https://satir8.github.io/PictureCollectionSlider",
     "img": "PictureCollectionSlider.jpg",
     "tags": ["HTML5", "CSS3", "Vanilla JS", "JSON"],
-    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
+    "description": "Picture slider shows you a collection of pictures. Choose any of them and switch with the keyboard arrows. Pet project."
   },
   {
     "title": "Countdown timer",
@@ -92,7 +92,7 @@
     "url": "https://satir8.github.io/Countdown_timer",
     "img": "CountdownTimer.jpg",
     "tags": ["HTML5", "CSS3", "Vanilla JS"],
-    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
+    "description": "With the countdown timer, you can see how fast the time is passing and the next year is getting closer. Pet project."
   },
   {
     "title": "Mogo",
@@ -100,6 +100,6 @@
     "url": "https://satir8.github.io/Mogo",
     "img": "Mogo.jpg",
     "tags": ["HTML5", "SASS", "Gulp"],
-    "description": "Some text Some text Some text Some text Some text Some textSome text Some text"
+    "description": "Mogo is the one-page website which has some cute transitions. Pet project."
   }
 ]

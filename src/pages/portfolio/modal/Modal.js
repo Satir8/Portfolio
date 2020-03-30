@@ -16,11 +16,10 @@ class Modal extends Component {
 
   handleKeyPress = e => {
     const { onCloseModal, onPrev, onNext } = this.props;
-    // if (e.code !== "Escape") return;
 
     e.code === "Escape" && onCloseModal();
-    // e.code === "ArrowLeft" && onPrev();
-    // e.code === "ArrowRight" && onNext();
+    e.code === "ArrowLeft" && onPrev();
+    e.code === "ArrowRight" && onNext();
   };
 
   handleOverlayClick = e => {
