@@ -73,49 +73,67 @@ class Portfolio extends Component {
     } = this.state;
     return (
       <>
-        <h2>Portfolio</h2>
-        <ul className={styles.list}>
-          {data.map(({ title, preview, tags, id }) => {
-            return (
-              <li className={styles.list__item} key={id}>
-                <div
-                  className={styles.wrapper}
-                  id={id}
-                  onClick={this.handleOpenModal}
-                ></div>
-                <div className={styles.item_bar}>
-                  <h2 className={styles.barHeading}>{title}</h2>
-                </div>
-                <div className={styles.item__main}>
-                  <img
-                    className={styles.item__img}
-                    src={require(`../../img/preview/${preview}`)}
-                    alt="project preview"
-                  />
-                  <div className={styles.tags}>
-                    <ul className={styles.tags__list}>
-                      {tags.map((item, idx) => (
-                        <li className={styles.tags__item} key={idx}>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-        {isModal && (
-          <Modal
-            nextObjTitle={nextObjTitle}
-            prevObjTitle={prevObjTitle}
-            data={modalObject}
-            onCloseModal={this.handleCloseModal}
-            onNext={this.handleNextObject}
-            onPrev={this.handlePrevObject}
-          />
-        )}
+        <div className={styles.pageWrapper}>
+          <div className={styles.contentWrapper}>
+            <div className={styles.titleWrapper}>
+              <h2 className={styles.pageTitle}>frontend developer portfolio</h2>
+              <a
+                href={require("../../cv/Grygorii Yakovina.pdf")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.downloadLink}
+              >
+                View Resume
+              </a>
+            </div>
+            <p className={styles.pageDescription}>
+              From HTLM semantic and CSS modules to ReactJS and Redux. Here you
+              can take a look at some of my latest projects.
+            </p>
+            <ul className={styles.list}>
+              {data.map(({ title, preview, tags, id }) => {
+                return (
+                  <li className={styles.list__item} key={id}>
+                    <div
+                      className={styles.wrapper}
+                      id={id}
+                      onClick={this.handleOpenModal}
+                    ></div>
+                    <div className={styles.item_bar}>
+                      <h2 className={styles.barHeading}>{title}</h2>
+                    </div>
+                    <div className={styles.item__main}>
+                      <img
+                        className={styles.item__img}
+                        src={require(`../../img/preview/${preview}`)}
+                        alt="project preview"
+                      />
+                      <div className={styles.tags}>
+                        <ul className={styles.tags__list}>
+                          {tags.map((item, idx) => (
+                            <li className={styles.tags__item} key={idx}>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+            {isModal && (
+              <Modal
+                nextObjTitle={nextObjTitle}
+                prevObjTitle={prevObjTitle}
+                data={modalObject}
+                onCloseModal={this.handleCloseModal}
+                onNext={this.handleNextObject}
+                onPrev={this.handlePrevObject}
+              />
+            )}
+          </div>
+        </div>
       </>
     );
   }

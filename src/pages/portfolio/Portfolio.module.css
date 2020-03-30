@@ -1,11 +1,73 @@
-.list {
+.pageWrapper {
+  min-height: 100vh;
+  background-color: rgba(42, 42, 42, 0.95);
+}
+
+.contentWrapper {
+}
+
+.titleWrapper {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pageTitle {
+  text-align: left;
+  font-family: "Montserrat", Tahoma, Verdana, sans-serif;
+  color: #cacaca;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  text-transform: lowercase;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* .pageTitle::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 160%;
+  background-color: rgba(182, 182, 182, 0.5);
+} */
+
+.pageDescription {
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+  font-family: "Lato", "Open Sans", Verdana, sans-serif;
+  color: #b6b6b6;
+  text-align: left;
+}
+
+.downloadLink {
+  display: block;
+  text-align: center;
+  width: 250px;
+  font-family: "Montserrat", Tahoma, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #e7ff20;
+  background-color: #7999a9;
+  border-radius: 2%;
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.5);
+  padding: 4px 8px;
+  outline: none;
+}
+
+.list {
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .list__item {
   position: relative;
   width: 300px;
+  /* box-shadow: 0 0 50px rgba(0, 0, 0, 0.75); */
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
 }
 
 .wrapper {
@@ -29,25 +91,25 @@
 .list__item:hover .item_bar {
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(2, 0, 36, 0.3) 10%,
-    rgba(0, 148, 206, 0.3) 20%,
-    rgba(0, 148, 206, 0.3) 80%,
-    rgba(2, 0, 36, 0.3) 90%,
-    rgba(0, 0, 0, 0.5) 100%
+    rgba(42, 42, 42, 0.95) 0%,
+    rgba(121, 153, 169, 1) 15%,
+    rgba(121, 153, 169, 1) 85%,
+    rgba(42, 42, 42, 0.95) 100%
   );
 }
 
 .item_bar {
-  background-color: rgba(71, 71, 71, 0.4);
+  color: rgba(231, 255, 32, 0.8);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+  background-color: #7999a9;
   text-align: center;
   border-top-left-radius: 2%;
   border-top-right-radius: 2%;
 }
 
 .barHeading {
-  font-family: "Open Sans";
-  font-size: 15px;
+  font-family: "Open Sans", Verdana, sans-serif;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -86,9 +148,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
-  background-color: rgb(0, 0, 0, 0.3);
-  box-shadow: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.4);
+  opacity: 0.2;
+  background-color: rgb(0, 0, 0, 0.2);
+  box-shadow: inset 0px 0px 30px 0px rgba(0, 0, 0, 0.4);
   transition-duration: 500ms;
 }
 

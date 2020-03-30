@@ -1,0 +1,106 @@
+.welcome__pageWrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  background-color: rgba(42, 42, 42, 0.95);
+}
+.welcome__innerWrapper {
+  width: 70%;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center; */
+}
+.welcome__photoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.welcome__photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.welcome__mainTitle {
+  display: block;
+  text-align: center;
+  /* text-align: left; */
+  font-family: "Montserrat", Tahoma, Verdana, sans-serif;
+  color: #cacaca;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.welcome__mainSubtitle {
+  text-align: center;
+  font-family: "Montserrat", Tahoma, Verdana, sans-serif;
+  font-size: 32px;
+  color: #cacaca;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  position: relative;
+  display: block;
+  letter-spacing: -0.045em;
+}
+
+.welcome__mainSubtitle::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  height: 1px;
+  width: 50%;
+  background-color: rgba(182, 182, 182, 0.5);
+}
+
+.welcome__description {
+  font-family: "Lato", "Open Sans", Verdana, sans-serif;
+  color: #b6b6b6;
+  text-align: center;
+}
+
+.welcome__downloadLink {
+  display: block;
+  text-align: center;
+  width: 250px;
+  font-family: "Montserrat", Tahoma, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #e7ff20;
+  background-color: #7999a9;
+  border-radius: 2%;
+  box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.5);
+  padding: 4px 8px;
+  outline: none;
+  margin: 0 auto;
+}
+
+.welcome__skillsList {
+  width: 460px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.welcome__skillsItem {
+  text-transform: uppercase;
+  font-family: "Lato", "Open Sans", Verdana, sans-serif;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(76, 76, 77, 0.95);
+  border-radius: 4%;
+  padding: 4px 6px;
+  margin: 4px;
+}
