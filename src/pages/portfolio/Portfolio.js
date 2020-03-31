@@ -75,27 +75,27 @@ class Portfolio extends Component {
       <>
         <div className={styles.pageWrapper}>
           <div className={styles.contentWrapper}>
-            <div className={styles.titleWrapper}>
-              <h2 className={styles.pageTitle}>frontend developer portfolio</h2>
-              <a
-                href={require("../../cv/Grygorii Yakovina.pdf")}
+            {/* <div className={styles.titleWrapper}> */}
+            <h2 className={styles.pageTitle}>web developer portfolio</h2>
+            {/* <a
+                href={require("../../cv/GregoryYakovina.pdf")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.downloadLink}
               >
                 View Resume
-              </a>
-            </div>
+              </a> */}
+            {/* </div> */}
             <p className={styles.pageDescription}>
-              From HTLM semantic and CSS modules to ReactJS and Redux. Here you
-              can take a look at some of my latest projects.
+              From HTLM and CSS modules to ReactJS and Redux.
+              <span> Here you can see some of my latest pet projects.</span>
             </p>
             <ul className={styles.list}>
               {data.map(({ title, preview, tags, id }) => {
                 return (
                   <li className={styles.list__item} key={id}>
                     <div
-                      className={styles.wrapper}
+                      className={styles.activeWrapper}
                       id={id}
                       onClick={this.handleOpenModal}
                     ></div>
@@ -108,7 +108,7 @@ class Portfolio extends Component {
                         src={require(`../../img/preview/${preview}`)}
                         alt="project preview"
                       />
-                      <div className={styles.tags}>
+                      <div className={styles.tags__wrapper}>
                         <ul className={styles.tags__list}>
                           {tags.map((item, idx) => (
                             <li className={styles.tags__item} key={idx}>
@@ -122,6 +122,23 @@ class Portfolio extends Component {
                 );
               })}
             </ul>
+            <div className={styles.message__wrapper}>
+              <h2 className={styles.message__heading}>Let's talk</h2>
+
+              <p className={styles.message__text}>
+                Wanna get in touch or talk about a project?{" "}
+                <span>
+                  Feel free to contact me via email at{" "}
+                  <a
+                    href="mailto:g.iakovyna@gmail.com"
+                    className={styles.message__mail}
+                  >
+                    g.iakovyna@gmail.com
+                  </a>
+                </span>{" "}
+              </p>
+            </div>
+
             {isModal && (
               <Modal
                 nextObjTitle={nextObjTitle}
