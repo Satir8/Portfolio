@@ -1,14 +1,17 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
+import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import dataJSON from "../../data.json";
 import Modal from "./modal/Modal";
 import styles from "./Portfolio.module.css";
 
 class Portfolio extends Component {
+  // overlayRef = createRef();
+
   state = {
     data: [],
-    isModal: false,
-    modalObject: {},
+    isModal: true,
+    modalObject: dataJSON[0],
     modalIdx: 0,
     prevObjTitle: "",
     nextObjTitle: ""
@@ -63,6 +66,12 @@ class Portfolio extends Component {
     this.setState({ isModal: false });
   };
 
+  // handleOverlayClick = e => {
+  //   const { current } = this.overlayRef;
+  //   if (current && e.target !== current) return;
+  //   this.handleCloseModal();
+  // };
+
   render() {
     const {
       data,
@@ -74,6 +83,7 @@ class Portfolio extends Component {
     return (
       <>
         <div className={styles.pageWrapper}>
+          {/* <div className={isModal && styles.overflow}> */}
           <div className={styles.contentWrapper}>
             {/* <div className={styles.titleWrapper}> */}
             <h2 className={styles.pageTitle}>web developer portfolio</h2>
@@ -131,26 +141,39 @@ class Portfolio extends Component {
                   Feel free to contact me via email at{" "}
                   <a
                     href="mailto:g.iakovyna@gmail.com"
-                    className={styles.message__mail}
+                    className={styles.message__link}
                   >
                     g.iakovyna@gmail.com
                   </a>
                 </span>{" "}
+                <span className={styles.contactSpan}>
+                  Or get more contact information at the{" "}
+                  <Link to="/contact" className={styles.message__link}>
+                    contact page
+                  </Link>
+                </span>
               </p>
             </div>
 
             {isModal && (
-              <Modal
-                nextObjTitle={nextObjTitle}
-                prevObjTitle={prevObjTitle}
-                data={modalObject}
-                onCloseModal={this.handleCloseModal}
-                onNext={this.handleNextObject}
-                onPrev={this.handlePrevObject}
-              />
+              <div
+                ref={this.overlayRef}
+                onClick={this.handleOverlayClick}
+                className={styles.modal__overlay}
+              >
+                <Modal
+                  nextObjTitle={nextObjTitle}
+                  prevObjTitle={prevObjTitle}
+                  data={modalObject}
+                  onCloseModal={this.handleCloseModal}
+                  onNext={this.handleNextObject}
+                  onPrev={this.handlePrevObject}
+                />
+              </div>
             )}
           </div>
         </div>
+        {/* </div> */}
       </>
     );
   }

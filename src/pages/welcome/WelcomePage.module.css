@@ -3,7 +3,7 @@
   justify-content: center;
   flex-wrap: wrap;
   min-height: 100vh;
-  background-color: rgba(42, 42, 42, 0.95);
+  background-color: rgba(42, 42, 42, 1);
   padding: 40px 10px 30px;
 }
 
