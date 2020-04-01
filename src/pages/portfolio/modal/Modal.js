@@ -1,5 +1,4 @@
 import React, { Component, createRef } from "react";
-// import { Link } from "react-router-dom";
 import sprite from "../../../img/icons/sprite.svg";
 import styles from "./Modal.module.css";
 
@@ -39,12 +38,12 @@ class Modal extends Component {
     } = this.props;
     const { title, url, img, tags, description } = data;
     return (
-      <div
-        ref={this.overlayRef}
-        onClick={e => this.handleOverlayClick(e)}
-        className={styles.modal__overlay}
-      >
-        <>
+      <>
+        <div
+          ref={this.overlayRef}
+          onClick={e => this.handleOverlayClick(e)}
+          className={styles.modal__overlay}
+        >
           <div className={styles.arrowWrapper}>
             <div className={styles.inlineArrowWrapper} onClick={onPrev}>
               <svg className={styles.modal__arrows}>
@@ -59,9 +58,12 @@ class Modal extends Component {
               </svg>
             </div>
           </div>
+
           <div className={styles.modal}>
             <div className={styles.titleWrapper}>
-              <h2 className={styles.modal__title}>{title}</h2>
+              <h2 className={styles.modal__title} id="#style-4">
+                {title}
+              </h2>
               <a
                 href={url}
                 target="_blank"
@@ -95,15 +97,6 @@ class Modal extends Component {
                 </div>
               </a>
             </div>
-            {/* <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={[styles.modal__link, styles.modal__linkSml].join(" ")}
-          >
-            visit the site
-          </a> */}
-
             <h2 className={styles.modal__subTitle}>Technical Sheet</h2>
             <p className={styles.modal__description}>
               Code technologies I got involved with while working on this
@@ -123,8 +116,8 @@ class Modal extends Component {
               <use href={sprite + "#close"} />
             </svg>
           </div>
-        </>
-      </div>
+        </div>
+      </>
     );
   }
 }

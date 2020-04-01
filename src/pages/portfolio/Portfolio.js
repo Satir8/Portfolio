@@ -1,4 +1,4 @@
-import React, { Component, createRef } from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import dataJSON from "../../data.json";
@@ -6,8 +6,6 @@ import Modal from "./modal/Modal";
 import styles from "./Portfolio.module.css";
 
 class Portfolio extends Component {
-  // overlayRef = createRef();
-
   state = {
     data: [],
     isModal: true,
@@ -66,12 +64,6 @@ class Portfolio extends Component {
     this.setState({ isModal: false });
   };
 
-  // handleOverlayClick = e => {
-  //   const { current } = this.overlayRef;
-  //   if (current && e.target !== current) return;
-  //   this.handleCloseModal();
-  // };
-
   render() {
     const {
       data,
@@ -83,19 +75,8 @@ class Portfolio extends Component {
     return (
       <>
         <div className={styles.pageWrapper}>
-          {/* <div className={isModal && styles.overflow}> */}
           <div className={styles.contentWrapper}>
-            {/* <div className={styles.titleWrapper}> */}
             <h2 className={styles.pageTitle}>web developer portfolio</h2>
-            {/* <a
-                href={require("../../cv/GregoryYakovina.pdf")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.downloadLink}
-              >
-                View Resume
-              </a> */}
-            {/* </div> */}
             <p className={styles.pageDescription}>
               From HTLM and CSS modules to ReactJS and Redux.
               <span> Here you can see some of my latest pet projects.</span>
@@ -156,20 +137,14 @@ class Portfolio extends Component {
             </div>
 
             {isModal && (
-              <div
-                ref={this.overlayRef}
-                onClick={this.handleOverlayClick}
-                className={styles.modal__overlay}
-              >
-                <Modal
-                  nextObjTitle={nextObjTitle}
-                  prevObjTitle={prevObjTitle}
-                  data={modalObject}
-                  onCloseModal={this.handleCloseModal}
-                  onNext={this.handleNextObject}
-                  onPrev={this.handlePrevObject}
-                />
-              </div>
+              <Modal
+                nextObjTitle={nextObjTitle}
+                prevObjTitle={prevObjTitle}
+                data={modalObject}
+                onCloseModal={this.handleCloseModal}
+                onNext={this.handleNextObject}
+                onPrev={this.handlePrevObject}
+              />
             )}
           </div>
         </div>
