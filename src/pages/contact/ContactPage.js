@@ -18,31 +18,29 @@ class ContactPage extends Component {
               g.iakovyna@gmail.com
             </a>{" "}
           </p>
-          <p className={styles.contact__message}>
-            Also you may follow me on{" "}
-            <div className={styles.message__socialWrapper}>
-              <a
-                className={styles.message__social}
-                href="https://www.linkedin.com/in/grygorii-yakovina/"
-                target="_blanc"
-              >
-                <svg className={[styles.icons, styles.linkedIn].join(" ")}>
-                  <use href={sprite + "#linkedin"} />
-                </svg>
-                <p className={styles.message__socialTitle}>LinkedIn</p>
-              </a>{" "}
-              <a
-                className={styles.message__social}
-                href="https://github.com/Satir8"
-                target="_blanc"
-              >
-                <svg className={[styles.icons, styles.gitHub].join(" ")}>
-                  <use className={styles.icons} href={sprite + "#github"} />
-                </svg>{" "}
-                <p className={styles.message__socialTitle}>GitHub</p>
-              </a>
-            </div>
-          </p>
+          <p className={styles.contact__message}>Also you may follow me on </p>
+          <div className={styles.message__socialWrapper}>
+            <a
+              className={styles.message__social}
+              href="https://www.linkedin.com/in/grygorii-yakovina/"
+              target="_blanc"
+            >
+              <svg className={styles.icons}>
+                <use href={sprite + "#linkedin"} />
+              </svg>
+              <span className={styles.message__socialTitle}>LinkedIn</span>
+            </a>{" "}
+            <a
+              className={styles.message__social}
+              href="https://github.com/Satir8"
+              target="_blanc"
+            >
+              <svg className={styles.icons}>
+                <use className={styles.icons} href={sprite + "#github"} />
+              </svg>{" "}
+              <span className={styles.message__socialTitle}>GitHub</span>
+            </a>
+          </div>
           <p className={styles.manyThanks}>
             Thanks for visiting,{" "}
             <span className={styles.manyThanks__end}>
