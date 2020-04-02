@@ -8,8 +8,8 @@ import styles from "./Portfolio.module.css";
 class Portfolio extends Component {
   state = {
     data: [],
-    isModal: true,
-    modalObject: dataJSON[0],
+    isModal: false,
+    modalObject: {},
     modalIdx: 0,
     prevObjTitle: "",
     nextObjTitle: ""

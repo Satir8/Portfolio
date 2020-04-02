@@ -1,3 +1,17 @@
+body::-webkit-scrollbar {
+  width: 3px;
+  background-color: #7999a9;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgba(42, 42, 42, 1);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(121, 153, 169, 0.8);
+}
+
 .welcome__pageWrapper {
   display: flex;
   justify-content: center;
@@ -217,7 +231,7 @@
   .welcome__description {
     width: 600px;
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
   .welcome__description::after,
   .welcome__mainTitle::after {

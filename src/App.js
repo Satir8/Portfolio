@@ -15,7 +15,7 @@ const LazyContactPage = lazy(() =>
 function App() {
   return (
     <>
-      <Suspense fallback={<h1>Wait a little...</h1>}>
+      <Suspense fallback={""}>
         <Switch>
           <Route path="/portfolio" exact component={LazyPortfolio} />
           <Route path="/contact" exact component={LazyContactPage} />

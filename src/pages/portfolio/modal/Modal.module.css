@@ -91,14 +91,14 @@ body::-webkit-scrollbar-thumb {
   margin-top: 12px;
 }
 .modal__description {
-  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
   font-family: "Lato", "Open Sans", Verdana, sans-serif;
+  color: #b6b6b6;
+  text-align: left;
   font-size: 1.05em;
   font-weight: 400;
-  color: #b6b6b6;
   line-height: 1.7em;
   word-spacing: 0.02em;
-  text-align: left;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
   margin-bottom: 14px;
 }
 .modal__description span {
@@ -247,7 +247,6 @@ body::-webkit-scrollbar-thumb {
   }
   .arrowWrapper {
     width: 94%;
-    position: absolute;
   }
   .inlineArrowWrapper {
     display: flex;
@@ -278,6 +277,13 @@ body::-webkit-scrollbar-thumb {
     color: rgba(202, 202, 202, 0.7);
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
     text-transform: lowercase;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 500ms;
+  }
+
+  .inlineArrowWrapper:hover .arrowObjTitle {
+    opacity: 1;
   }
 
   .modal__title::after,
@@ -285,10 +291,43 @@ body::-webkit-scrollbar-thumb {
     width: 660px;
   }
 
+  .modal__imgWrapper {
+    width: 86%;
+    margin: 24px auto;
+  }
+
   .closeIcon {
     top: 26px;
-    right: 26px;
+    right: 30px;
     width: 24px;
     height: 24px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .modal {
+    width: 800px;
+  }
+  .arrowWrapper {
+    width: 76%;
+  }
+  .inlineArrowWrapper:nth-child(1) {
+    width: 110px;
+  }
+  .inlineArrowWrapper:nth-child(2) {
+    width: 126px;
+  }
+
+  .modal__arrows {
+    width: 65px;
+  }
+  .arrowObjTitle {
+    width: 60px;
+    font-size: 12px;
+  }
+
+  .modal__title::after,
+  .modal__subTitle::after {
+    width: 740px;
   }
 }

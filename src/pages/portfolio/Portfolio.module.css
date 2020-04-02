@@ -244,7 +244,7 @@
 }
 .message__link {
   display: inline-block;
-  color: rgba(231, 255, 32, 0.8);
+  color: rgba(231, 255, 32, 0.95);
   font-size: 14px;
   font-weight: 700;
 }
@@ -277,8 +277,6 @@
   }
 
   .barHeading {
-    font-size: 15px;
-    font-weight: 500;
     line-height: 1.6;
   }
 
@@ -341,25 +339,8 @@
   .list__item:not(:last-child) {
     margin-bottom: 30px;
   }
-
-  .barHeading {
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.6;
-  }
-
   .tags__list {
     width: 70%;
-  }
-
-  .message__heading {
-    font-size: 1.5em;
-  }
-  .message__text {
-    font-size: 18px;
-  }
-  .message__link {
-    font-size: 18px;
   }
 }
 
