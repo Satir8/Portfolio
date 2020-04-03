@@ -1,27 +1,16 @@
-import React, { Component, lazy, Suspense } from "react";
+import React, { Component, Suspense } from "react";
+import { CSSTransition } from "react-transition-group";
 import { Route, Switch } from "react-router-dom";
+import Burger from "./components/burger/Burger";
+import Navigation from "./components/navigation/Navigation";
+import WelcomePage from "./pages/welcome/WelcomePage";
+import PortfolioPage from "./pages/portfolio/Portfolio";
+import ContactPage from "./pages/contact/ContactPage";
+import slideTransitions from "./transitions/slideTransitions.module.css";
 import "./App.css";
 
-const LazyBurger = lazy(() =>
-  import("./components/burger/Burger" /* webpackChunkName: "Burger" */)
-);
-const LazyNavigation = lazy(() =>
-  import(
-    "./components/navigation/Navigation" /* webpackChunkName: "Navigation" */
-  )
-);
-const LazyWelcomePage = lazy(() =>
-  import("./pages/welcome/WelcomePage" /* webpackChunkName: "Welcome-page" */)
-);
-const LazyPortfolio = lazy(() =>
-  import("./pages/portfolio/Portfolio" /* webpackChunkName: "Portfolio-page" */)
-);
-const LazyContactPage = lazy(() =>
-  import("./pages/contact/ContactPage" /* webpackChunkName: "Contact-page" */)
-);
-
 class App extends Component {
-  state = { isActive: true };
+  state = { isActive: false };
 
   handleToggle = () => {
     this.setState(prev => ({ isActive: !prev.isActive }));
@@ -31,12 +20,21 @@ class App extends Component {
     return (
       <>
         <Suspense fallback={""}>
-          <LazyBurger isActive={isActive} onToggle={this.handleToggle} />
-          {isActive && <LazyNavigation />}
+          <Burger isActive={isActive} onToggle={this.handleToggle} />
+
+          <CSSTransition
+            in={isActive}
+            timeout={450}
+            classNames={slideTransitions}
+            unmountOnExit
+          >
+            {state => <Navigation onToggle={this.handleToggle} />}
+          </CSSTransition>
+
           <Switch>
-            <Route path="/portfolio" exact component={LazyPortfolio} />
-            <Route path="/contact" exact component={LazyContactPage} />
-            <Route path="/" component={LazyWelcomePage} />
+            <Route path="/portfolio" exact component={PortfolioPage} />
+            <Route path="/contact" exact component={ContactPage} />
+            <Route path="/" component={WelcomePage} />
           </Switch>
         </Suspense>
       </>

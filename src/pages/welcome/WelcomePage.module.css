@@ -129,9 +129,34 @@ body::-webkit-scrollbar-thumb {
 }
 
 .welcome__link {
+  position: relative;
   display: inline-block;
-  color: rgba(231, 255, 32, 0.8);
+  color: rgba(231, 255, 32, 0.78);
   font-weight: 700;
+  overflow: hidden;
+  vertical-align: middle;
+  padding: 0px 1px;
+  margin-bottom: 5px;
+}
+
+.welcome__link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  opacity: 0;
+  display: block;
+  width: 120%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: translateX(-100%);
+  transition-property: transform;
+  transition-duration: 200ms;
+}
+
+.welcome__link:hover::before {
+  transform: translateX(3%);
+  opacity: 1;
 }
 
 .welcome__skillsList {

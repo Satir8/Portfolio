@@ -202,7 +202,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: flex-start;
     width: 50px;
-    height: 80px;
+    height: 150px;
     fill: rgb(202, 202, 202);
     filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.6));
   }
@@ -257,19 +257,29 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+    transition-property: transform;
+    transition-duration: 350ms;
   }
   .inlineArrowWrapper:nth-child(1) {
     height: 80px;
     width: 86px;
+    transform: translateX(-100%);
   }
   .inlineArrowWrapper:nth-child(2) {
     height: 80px;
     width: 94px;
+    transform: translateX(100%);
+  }
+
+  .arrowWrapper .active {
+    transform: translateX(0%);
   }
 
   .modal__arrows {
     width: 50px;
+    height: 200px;
   }
+
   .arrowObjTitle {
     display: flex;
     justify-self: left;
@@ -282,12 +292,20 @@ body::-webkit-scrollbar-thumb {
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
     text-transform: lowercase;
     opacity: 0;
-    transition-property: opacity;
-    transition-duration: 500ms;
+    transition-property: opacity, transform;
+    transition-duration: 250ms;
+  }
+
+  .arrowObjTitle:nth-child(2) {
+    transform: translateX(-20px);
+  }
+  .arrowObjTitle:nth-child(1) {
+    transform: translateX(20px);
   }
 
   .inlineArrowWrapper:hover .arrowObjTitle {
     opacity: 1;
+    transform: translateX(0px);
   }
 
   .modal__title::after,

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
 import { v4 as uuidv4 } from "uuid";
 import dataJSON from "../../data.json";
 import Modal from "./modal/Modal";
+import slideTransitions from "../../transitions/slideTransitions.module.css";
 import styles from "./Portfolio.module.css";
 
 class Portfolio extends Component {
@@ -136,16 +138,23 @@ class Portfolio extends Component {
               </p>
             </div>
 
-            {isModal && (
-              <Modal
-                nextObjTitle={nextObjTitle}
-                prevObjTitle={prevObjTitle}
-                data={modalObject}
-                onCloseModal={this.handleCloseModal}
-                onNext={this.handleNextObject}
-                onPrev={this.handlePrevObject}
-              />
-            )}
+            <CSSTransition
+              in={isModal}
+              timeout={450}
+              classNames={slideTransitions}
+              unmountOnExit
+            >
+              {state => (
+                <Modal
+                  nextObjTitle={nextObjTitle}
+                  prevObjTitle={prevObjTitle}
+                  data={modalObject}
+                  onCloseModal={this.handleCloseModal}
+                  onNext={this.handleNextObject}
+                  onPrev={this.handlePrevObject}
+                />
+              )}
+            </CSSTransition>
           </div>
         </div>
         {/* </div> */}

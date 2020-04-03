@@ -58,7 +58,6 @@ class WelcomePage extends Component {
                 >
                   my resume
                 </a>
-                .
               </span>
             </p>
             <h2 className={styles.welcome__mainSubheading}>My skills</h2>

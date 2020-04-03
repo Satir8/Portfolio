@@ -3,7 +3,21 @@ import { NavLink } from "react-router-dom";
 import styles from "./Navigation.module.css";
 
 class Navigation extends Component {
+  componentDidMount() {
+    window.addEventListener("keydown", this.handleKeyPress);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("keydown", this.handleKeyPress);
+  }
+
+  handleKeyPress = e => {
+    const { onToggle } = this.props;
+    e.code === "Escape" && onToggle();
+  };
+
   render() {
+    const { onToggle } = this.props;
     return (
       <nav className={styles.pageNav}>
         <ul className={styles.pageNav__list}>
@@ -11,8 +25,10 @@ class Navigation extends Component {
             {" "}
             <NavLink
               to="/"
+              exact
               className={styles.navLink}
               activeClassName={styles.activeNavLink}
+              onClick={onToggle}
             >
               Welcome
             </NavLink>
@@ -24,6 +40,7 @@ class Navigation extends Component {
               to="/portfolio"
               className={styles.navLink}
               activeClassName={styles.activeNavLink}
+              onClick={onToggle}
             >
               Portfolio
             </NavLink>
@@ -34,6 +51,7 @@ class Navigation extends Component {
               to="/contact"
               className={styles.navLink}
               activeClassName={styles.activeNavLink}
+              onClick={onToggle}
             >
               Contact
             </NavLink>

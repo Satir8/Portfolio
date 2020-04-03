@@ -1,16 +1,26 @@
 import React, { Component, createRef } from "react";
+import { CSSTransition } from "react-transition-group";
 import sprite from "../../../img/icons/sprite.svg";
 import styles from "./Modal.module.css";
+import leftSlideTransitions from "../../../transitions/leftSlideTransitions.module.css";
+import rightSlideTransitions from "../../../transitions/leftSlideTransitions.module.css";
 
 class Modal extends Component {
   overlayRef = createRef();
+  state = {
+    isMount: false
+  };
 
   componentDidMount() {
     window.addEventListener("keydown", this.handleKeyPress);
+    setTimeout(() => {
+      this.setState({ isMount: true });
+    }, 800);
   }
 
   componentWillUnmount() {
     window.removeEventListener("keydown", this.handleKeyPress);
+    this.setState({ isMount: false });
   }
 
   handleKeyPress = e => {
@@ -37,6 +47,7 @@ class Modal extends Component {
       prevObjTitle
     } = this.props;
     const { title, url, img, tags, description } = data;
+    const { isMount } = this.state;
     return (
       <>
         <div
@@ -45,20 +56,38 @@ class Modal extends Component {
           className={styles.modal__overlay}
         >
           <div className={styles.arrowWrapper}>
-            <div className={styles.inlineArrowWrapper} onClick={onPrev}>
+            <div
+              className={[
+                styles.inlineArrowWrapper,
+                isMount ? styles.active : undefined
+              ].join(" ")}
+              onClick={onPrev}
+            >
               <svg className={styles.modal__arrows}>
                 <use href={sprite + "#left"} />
               </svg>
               <p className={styles.arrowObjTitle}>{prevObjTitle}</p>
             </div>
-            <div className={styles.inlineArrowWrapper} onClick={onNext}>
+            <div
+              className={[
+                styles.inlineArrowWrapper,
+                isMount ? styles.active : undefined
+              ].join(" ")}
+              onClick={onNext}
+            >
               <p className={styles.arrowObjTitle}>{nextObjTitle}</p>
               <svg className={styles.modal__arrows}>
                 <use href={sprite + "#right"} />
               </svg>
             </div>
           </div>
-
+          {/* <CSSTransition
+            in={isMount}
+            timeout={350}
+            classNames={leftSlideTransitions}
+            unmountOnExit
+          >
+            {state => ( */}
           <div className={styles.modal}>
             <div className={styles.titleWrapper}>
               <h2 className={styles.modal__title} id="#style-4">
@@ -116,6 +145,8 @@ class Modal extends Component {
               <use href={sprite + "#close"} />
             </svg>
           </div>
+          {/* )}{" "}
+          </CSSTransition> */}
         </div>
       </>
     );
