@@ -1,3 +1,21 @@
+/* body {
+  background: linear-gradient(-90deg, #b3b2b2, #7999a9, #7999a9, #b6b6b680);
+  background-size: 300% 300%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
 body::-webkit-scrollbar {
   width: 3px;
   background-color: #7999a9;
@@ -18,7 +36,7 @@ body::-webkit-scrollbar-thumb {
   flex-wrap: wrap;
   min-height: 100vh;
   background-color: rgba(42, 42, 42, 1);
-  padding: 40px 10px 30px;
+  padding: 40px 10px;
 }
 
 .welcome__photoWrapper {
@@ -180,6 +198,38 @@ body::-webkit-scrollbar-thumb {
   margin: 4px;
 }
 
+.welcome__skillsItem:hover {
+  box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.8);
+  animation: shake-bottom 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+@keyframes shake-bottom {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
+
 @media (min-width: 768px) {
   .welcome__photoWrapper {
     width: 180px;
@@ -235,7 +285,7 @@ body::-webkit-scrollbar-thumb {
 
 @media (min-width: 1024px) {
   .welcome__pageWrapper {
-    padding: 24px 0px;
+    padding: 24px 0px 30px;
   }
   .welcome__photoWrapper {
     width: 190px;

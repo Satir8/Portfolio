@@ -95,6 +95,27 @@
   outline: none;
   border-radius: 2px;
   padding: 5px 10px;
+  overflow: hidden;
+  box-shadow: 1px 2px 4px 0px rgb(0, 0, 0, 0.3);
+}
+
+.message__social::after {
+  background: #fff;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.1;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  width: 50px;
+  z-index: 2;
+}
+
+.message__social:hover.message__social::after {
+  left: 120%;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .message__social::before {
@@ -106,6 +127,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.01);
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .message__social:nth-child(1) {

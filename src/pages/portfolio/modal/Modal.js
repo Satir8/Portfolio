@@ -2,25 +2,24 @@ import React, { Component, createRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import sprite from "../../../img/icons/sprite.svg";
 import styles from "./Modal.module.css";
-import leftSlideTransitions from "../../../transitions/leftSlideTransitions.module.css";
-import rightSlideTransitions from "../../../transitions/leftSlideTransitions.module.css";
+import opacityTransitions from "../../../transitions/opacityTransitions.module.css";
 
 class Modal extends Component {
   overlayRef = createRef();
   state = {
-    isMount: false
+    isArrowsMount: false
   };
 
   componentDidMount() {
     window.addEventListener("keydown", this.handleKeyPress);
     setTimeout(() => {
-      this.setState({ isMount: true });
+      this.setState({ isArrowsMount: true });
     }, 800);
   }
 
   componentWillUnmount() {
     window.removeEventListener("keydown", this.handleKeyPress);
-    this.setState({ isMount: false });
+    this.setState({ isArrowsMount: false });
   }
 
   handleKeyPress = e => {
@@ -44,10 +43,11 @@ class Modal extends Component {
       onNext,
       onPrev,
       nextObjTitle,
-      prevObjTitle
+      prevObjTitle,
+      isMount
     } = this.props;
     const { title, url, img, tags, description } = data;
-    const { isMount } = this.state;
+    const { isArrowsMount } = this.state;
     return (
       <>
         <div
@@ -59,7 +59,7 @@ class Modal extends Component {
             <div
               className={[
                 styles.inlineArrowWrapper,
-                isMount ? styles.active : undefined
+                isArrowsMount ? styles.active : undefined
               ].join(" ")}
               onClick={onPrev}
             >
@@ -71,7 +71,7 @@ class Modal extends Component {
             <div
               className={[
                 styles.inlineArrowWrapper,
-                isMount ? styles.active : undefined
+                isArrowsMount ? styles.active : undefined
               ].join(" ")}
               onClick={onNext}
             >
@@ -81,72 +81,72 @@ class Modal extends Component {
               </svg>
             </div>
           </div>
-          {/* <CSSTransition
+          <CSSTransition
             in={isMount}
-            timeout={350}
-            classNames={leftSlideTransitions}
+            timeout={600}
+            classNames={opacityTransitions}
             unmountOnExit
           >
-            {state => ( */}
-          <div className={styles.modal}>
-            <div className={styles.titleWrapper}>
-              <h2 className={styles.modal__title} id="#style-4">
-                {title}
-              </h2>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={[styles.modal__link, styles.modal__linkMd].join(" ")}
-              >
-                visit the website
-              </a>
+            <div className={styles.modal}>
+              <div className={styles.titleWrapper}>
+                <h2 className={styles.modal__title} id="#style-4">
+                  {title}
+                </h2>
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={[styles.modal__link, styles.modal__linkMd].join(
+                    " "
+                  )}
+                >
+                  visit the website
+                </a>
+              </div>
+              <p className={styles.modal__description}>
+                {description}
+                <span>Pet project.</span>
+              </p>
+
+              <div className={styles.modal__imgWrapper}>
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.modal__linkSm}
+                >
+                  <img
+                    src={require(`../../../img/preview/${img}`)}
+                    alt=""
+                    className={styles.modal__Image}
+                  />
+                  <div className={styles.modal__imgOverlay}></div>
+
+                  <div className={styles.item_bar}>
+                    <h2 className={styles.barHeading}>visit the website</h2>
+                  </div>
+                </a>
+              </div>
+              <h2 className={styles.modal__subTitle}>Technical Sheet</h2>
+              <p className={styles.modal__description}>
+                Code technologies I got involved with while working on this
+                project.
+              </p>
+              <ul className={styles.modal__techList}>
+                {tags.map((item, idx) => {
+                  return (
+                    <li className={styles.techList__item} key={idx}>
+                      {item}
+                    </li>
+                  );
+                })}
+              </ul>
+
+              <svg className={styles.closeIcon} onClick={onCloseModal}>
+                <use href={sprite + "#close"} />
+              </svg>
             </div>
-            <p className={styles.modal__description}>
-              {description}
-              <span>Pet project.</span>
-            </p>
-
-            <div className={styles.modal__imgWrapper}>
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.modal__linkSm}
-              >
-                <img
-                  src={require(`../../../img/preview/${img}`)}
-                  alt=""
-                  className={styles.modal__Image}
-                />
-                <div className={styles.modal__imgOverlay}></div>
-
-                <div className={styles.item_bar}>
-                  <h2 className={styles.barHeading}>visit the website</h2>
-                </div>
-              </a>
-            </div>
-            <h2 className={styles.modal__subTitle}>Technical Sheet</h2>
-            <p className={styles.modal__description}>
-              Code technologies I got involved with while working on this
-              project.
-            </p>
-            <ul className={styles.modal__techList}>
-              {tags.map((item, idx) => {
-                return (
-                  <li className={styles.techList__item} key={idx}>
-                    {item}
-                  </li>
-                );
-              })}
-            </ul>
-
-            <svg className={styles.closeIcon} onClick={onCloseModal}>
-              <use href={sprite + "#close"} />
-            </svg>
-          </div>
-          {/* )}{" "}
-          </CSSTransition> */}
+          </CSSTransition>
         </div>
       </>
     );

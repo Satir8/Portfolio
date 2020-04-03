@@ -10,11 +10,15 @@ import styles from "./Portfolio.module.css";
 class Portfolio extends Component {
   state = {
     data: [],
-    isModal: false,
     modalObject: {},
     modalIdx: 0,
     prevObjTitle: "",
-    nextObjTitle: ""
+    nextObjTitle: "",
+    isModal: false,
+    isMount: false
+    // modalSlide: false,
+    // modalLeft: false,
+    // modalRight: false
   };
 
   componentDidMount() {
@@ -27,11 +31,14 @@ class Portfolio extends Component {
     const prevObj = modalIdx - 1 < 0 ? data.length - 1 : modalIdx - 1;
     const nextObj = modalIdx < data.length - 1 ? modalIdx + 1 : 0;
     if (prevState.modalIdx !== modalIdx) {
-      this.setState({
-        modalObject: data[modalIdx],
-        prevObjTitle: data[prevObj].title,
-        nextObjTitle: data[nextObj].title
-      });
+      setTimeout(() => {
+        this.setState({
+          modalObject: data[modalIdx],
+          prevObjTitle: data[prevObj].title,
+          nextObjTitle: data[nextObj].title,
+          isMount: true
+        });
+      }, 600);
     }
   }
 
@@ -40,6 +47,7 @@ class Portfolio extends Component {
     modalIdx < data.length - 1
       ? this.setState(prev => ({ modalIdx: prev.modalIdx + 1 }))
       : this.setState({ modalIdx: 0 });
+    this.setState({ isMount: false });
   };
 
   handlePrevObject = () => {
@@ -47,6 +55,11 @@ class Portfolio extends Component {
     modalIdx - 1 < 0
       ? this.setState({ modalIdx: data.length - 1 })
       : this.setState(prev => ({ modalIdx: prev.modalIdx - 1 }));
+    this.setState({ isMount: false });
+    // this.setState({ modalLeft: true, modalSlide: true });
+    // setTimeout(() => {
+    //   this.setState({ modalLeft: false, modalSlide: false });
+    // }, 1000);
   };
 
   handleOpenModal = e => {
@@ -58,7 +71,8 @@ class Portfolio extends Component {
     this.setState({
       isModal: true,
       modalObject: targetObj,
-      modalIdx: targetIdx
+      modalIdx: targetIdx,
+      isMount: true
     });
   };
 
@@ -72,7 +86,8 @@ class Portfolio extends Component {
       isModal,
       modalObject,
       prevObjTitle,
-      nextObjTitle
+      nextObjTitle,
+      isMount
     } = this.state;
     return (
       <>
@@ -152,6 +167,7 @@ class Portfolio extends Component {
                   onCloseModal={this.handleCloseModal}
                   onNext={this.handleNextObject}
                   onPrev={this.handlePrevObject}
+                  isMount={isMount}
                 />
               )}
             </CSSTransition>
