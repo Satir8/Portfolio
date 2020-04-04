@@ -173,12 +173,13 @@ button {
 }
 
 body {
-  background: linear-gradient(-90deg, #b3b2b2, #7999a9, #7999a9, #b6b6b680);
+  background-color: rgba(42, 42, 42, 1);
+  /* background: linear-gradient(-90deg, #b3b2b2, #7999a9, #7999a9, #b6b6b680);
   background-size: 300% 300%;
-  animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite; */
 }
 
-@keyframes gradient {
+/* @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
@@ -188,4 +189,4 @@ body {
   100% {
     background-position: 0% 50%;
   }
-}
+} */

@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from "react";
-import { CSSTransition } from "react-transition-group";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Route, Switch } from "react-router-dom";
 import Burger from "./components/burger/Burger";
 import Navigation from "./components/navigation/Navigation";
@@ -20,7 +20,7 @@ class App extends Component {
   state = { isActive: false };
 
   handleToggle = () => {
-    this.setState(prev => ({ isActive: !prev.isActive }));
+    this.setState((prev) => ({ isActive: !prev.isActive }));
   };
   render() {
     const { isActive, isRoute } = this.state;
@@ -34,7 +34,7 @@ class App extends Component {
           classNames={slideTransitions}
           unmountOnExit
         >
-          {state => <Navigation onToggle={this.handleToggle} />}
+          {(state) => <Navigation onToggle={this.handleToggle} />}
         </CSSTransition>
         {/* {routes.map(({ path, Component }) => (
           <Route key={path} exact path={path}>
@@ -53,42 +53,56 @@ class App extends Component {
         {/* <Switch> */}
         {/* <Switch> */}
 
-        <Route path="/portfolio" exact>
-          {({ match }) => (
-            <CSSTransition
-              in={!!match}
-              timeout={600}
-              classNames={opacityTransitions}
-              unmountOnExit
-            >
-              <PortfolioPage />
-            </CSSTransition>
-          )}
-        </Route>
-        <Route path="/contact" exact>
-          {({ match }) => (
-            <CSSTransition
-              in={!!match}
-              timeout={600}
-              classNames={opacityTransitions}
-              unmountOnExit
-            >
-              <ContactPage />
-            </CSSTransition>
-          )}
-        </Route>
+        ~~
         <Route path="/" exact>
-          {({ match }) => (
-            <CSSTransition
-              in={!!match}
-              timeout={600}
-              classNames={opacityTransitions}
-              unmountOnExit
-            >
-              <WelcomePage />
-            </CSSTransition>
-          )}
+          {({ match }) => {
+            console.log(match);
+            console.log(match != null);
+            return (
+              <CSSTransition
+                in={match != null}
+                timeout={1200}
+                classNames={opacityTransitions}
+                unmountOnExit
+              >
+                <WelcomePage />
+              </CSSTransition>
+            );
+          }}
         </Route>
+        <Route path="/portfolio">
+          {({ match }) => {
+            console.log(match);
+            console.log(match != null);
+            return (
+              <CSSTransition
+                in={match != null}
+                timeout={1200}
+                classNames={opacityTransitions}
+                unmountOnExit
+              >
+                <PortfolioPage />
+              </CSSTransition>
+            );
+          }}
+        </Route>
+        <Route path="/contact">
+          {({ match }) => {
+            console.log(match);
+            console.log(match != null);
+            return (
+              <CSSTransition
+                in={match != null}
+                timeout={1200}
+                classNames={opacityTransitions}
+                unmountOnExit
+              >
+                <ContactPage />
+              </CSSTransition>
+            );
+          }}
+        </Route>
+
         {/* </Switch> */}
         {/* </Suspense> */}
       </>

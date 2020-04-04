@@ -15,14 +15,14 @@ class Portfolio extends Component {
     prevObjTitle: "",
     nextObjTitle: "",
     isModal: false,
-    isMount: false
+    isMount: false,
     // modalSlide: false,
     // modalLeft: false,
     // modalRight: false
   };
 
   componentDidMount() {
-    const newData = dataJSON.map(item => ({ ...item, id: uuidv4() }));
+    const newData = dataJSON.map((item) => ({ ...item, id: uuidv4() }));
     this.setState({ data: newData });
   }
 
@@ -36,7 +36,7 @@ class Portfolio extends Component {
           modalObject: data[modalIdx],
           prevObjTitle: data[prevObj].title,
           nextObjTitle: data[nextObj].title,
-          isMount: true
+          isMount: true,
         });
       }, 600);
     }
@@ -45,7 +45,7 @@ class Portfolio extends Component {
   handleNextObject = () => {
     const { data, modalIdx } = this.state;
     modalIdx < data.length - 1
-      ? this.setState(prev => ({ modalIdx: prev.modalIdx + 1 }))
+      ? this.setState((prev) => ({ modalIdx: prev.modalIdx + 1 }))
       : this.setState({ modalIdx: 0 });
     this.setState({ isMount: false });
   };
@@ -54,29 +54,25 @@ class Portfolio extends Component {
     const { data, modalIdx } = this.state;
     modalIdx - 1 < 0
       ? this.setState({ modalIdx: data.length - 1 })
-      : this.setState(prev => ({ modalIdx: prev.modalIdx - 1 }));
+      : this.setState((prev) => ({ modalIdx: prev.modalIdx - 1 }));
     this.setState({ isMount: false });
-    // this.setState({ modalLeft: true, modalSlide: true });
-    // setTimeout(() => {
-    //   this.setState({ modalLeft: false, modalSlide: false });
-    // }, 1000);
   };
 
-  handleOpenModal = e => {
+  handleOpenModal = (e) => {
     const { data } = this.state;
     const targetId = e.target.id;
-    const targetObj = data.find(item => item.id === targetId);
+    const targetObj = data.find((item) => item.id === targetId);
     const targetIdx = data.indexOf(targetObj);
     console.log(targetIdx);
     this.setState({
       isModal: true,
       modalObject: targetObj,
       modalIdx: targetIdx,
-      isMount: true
+      isMount: true,
     });
   };
 
-  handleCloseModal = e => {
+  handleCloseModal = (e) => {
     this.setState({ isModal: false });
   };
 
@@ -87,7 +83,7 @@ class Portfolio extends Component {
       modalObject,
       prevObjTitle,
       nextObjTitle,
-      isMount
+      isMount,
     } = this.state;
     return (
       <>
@@ -159,7 +155,7 @@ class Portfolio extends Component {
               classNames={slideTransitions}
               unmountOnExit
             >
-              {state => (
+              {(state) => (
                 <Modal
                   nextObjTitle={nextObjTitle}
                   prevObjTitle={prevObjTitle}

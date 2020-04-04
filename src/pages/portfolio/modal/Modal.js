@@ -7,7 +7,7 @@ import opacityTransitions from "../../../transitions/opacityTransitions.module.c
 class Modal extends Component {
   overlayRef = createRef();
   state = {
-    isArrowsMount: false
+    isArrowsMount: false,
   };
 
   componentDidMount() {
@@ -22,7 +22,7 @@ class Modal extends Component {
     this.setState({ isArrowsMount: false });
   }
 
-  handleKeyPress = e => {
+  handleKeyPress = (e) => {
     const { onCloseModal, onPrev, onNext } = this.props;
 
     e.code === "Escape" && onCloseModal();
@@ -30,7 +30,7 @@ class Modal extends Component {
     e.code === "ArrowRight" && onNext();
   };
 
-  handleOverlayClick = e => {
+  handleOverlayClick = (e) => {
     const { current } = this.overlayRef;
     if (current && e.target !== current) return;
     this.props.onCloseModal();
@@ -44,7 +44,7 @@ class Modal extends Component {
       onPrev,
       nextObjTitle,
       prevObjTitle,
-      isMount
+      isMount,
     } = this.props;
     const { title, url, img, tags, description } = data;
     const { isArrowsMount } = this.state;
@@ -52,14 +52,14 @@ class Modal extends Component {
       <>
         <div
           ref={this.overlayRef}
-          onClick={e => this.handleOverlayClick(e)}
+          onClick={(e) => this.handleOverlayClick(e)}
           className={styles.modal__overlay}
         >
           <div className={styles.arrowWrapper}>
             <div
               className={[
                 styles.inlineArrowWrapper,
-                isArrowsMount ? styles.active : undefined
+                isArrowsMount ? styles.active : undefined,
               ].join(" ")}
               onClick={onPrev}
             >
@@ -71,7 +71,7 @@ class Modal extends Component {
             <div
               className={[
                 styles.inlineArrowWrapper,
-                isArrowsMount ? styles.active : undefined
+                isArrowsMount ? styles.active : undefined,
               ].join(" ")}
               onClick={onNext}
             >
