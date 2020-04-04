@@ -1,11 +1,9 @@
-
-
 .pageWrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   min-height: 100vh;
-  background-color: rgba(42, 42, 42, 1);
+  /* background-color: rgba(42, 42, 42, 0.8); */
 }
 .contentWrapper {
   width: 100%;

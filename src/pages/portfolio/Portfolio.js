@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { CSSTransition } from "react-transition-group";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { v4 as uuidv4 } from "uuid";
 import dataJSON from "../../data.json";
 import Modal from "./modal/Modal";
+import listItemTransitions from "../../transitions/listItemTransitions.module.css";
 import slideTransitions from "../../transitions/slideTransitions.module.css";
 import styles from "./Portfolio.module.css";
 
@@ -15,10 +16,6 @@ class Portfolio extends Component {
     prevObjTitle: "",
     nextObjTitle: "",
     isModal: false,
-    isMount: false,
-    // modalSlide: false,
-    // modalLeft: false,
-    // modalRight: false
   };
 
   componentDidMount() {
@@ -94,38 +91,46 @@ class Portfolio extends Component {
               From HTLM and CSS modules to ReactJS and Redux.
               <span> Here you can see some of my latest pet projects.</span>
             </p>
-            <ul className={styles.list}>
+
+            <TransitionGroup component="ul" className={styles.list}>
               {data.map(({ title, preview, tags, id }) => {
                 return (
-                  <li className={styles.list__item} key={id}>
-                    <div
-                      className={styles.activeWrapper}
-                      id={id}
-                      onClick={this.handleOpenModal}
-                    ></div>
-                    <div className={styles.item_bar}>
-                      <h2 className={styles.barHeading}>{title}</h2>
-                    </div>
-                    <div className={styles.item__main}>
-                      <img
-                        className={styles.item__img}
-                        src={require(`../../img/preview/${preview}`)}
-                        alt="project preview"
-                      />
-                      <div className={styles.tags__wrapper}>
-                        <ul className={styles.tags__list}>
-                          {tags.map((item, idx) => (
-                            <li className={styles.tags__item} key={idx}>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
+                  <CSSTransition
+                    in={data.length > 0}
+                    key={id}
+                    timeout={600}
+                    classNames={listItemTransitions}
+                  >
+                    <li className={styles.list__item}>
+                      <div
+                        className={styles.activeWrapper}
+                        id={id}
+                        onClick={this.handleOpenModal}
+                      ></div>
+                      <div className={styles.item_bar}>
+                        <h2 className={styles.barHeading}>{title}</h2>
                       </div>
-                    </div>
-                  </li>
+                      <div className={styles.item__main}>
+                        <img
+                          className={styles.item__img}
+                          src={require(`../../img/preview/${preview}`)}
+                          alt="project preview"
+                        />
+                        <div className={styles.tags__wrapper}>
+                          <ul className={styles.tags__list}>
+                            {tags.map((item, idx) => (
+                              <li className={styles.tags__item} key={idx}>
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </CSSTransition>
                 );
               })}
-            </ul>
+            </TransitionGroup>
             <div className={styles.message__wrapper}>
               <h2 className={styles.message__heading}>Let's talk</h2>
 
@@ -169,7 +174,6 @@ class Portfolio extends Component {
             </CSSTransition>
           </div>
         </div>
-        {/* </div> */}
       </>
     );
   }

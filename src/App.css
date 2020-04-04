@@ -41,17 +41,6 @@ h3 {
   margin: 0;
 }
 
-/* .visually-hidden {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-} */
-
 html,
 body,
 div,
@@ -173,13 +162,30 @@ button {
 }
 
 body {
-  background-color: rgba(42, 42, 42, 1);
-  /* background: linear-gradient(-90deg, #b3b2b2, #7999a9, #7999a9, #b6b6b680);
-  background-size: 300% 300%;
-  animation: gradient 15s ease infinite; */
+  scroll-behavior: smooth;
 }
 
-/* @keyframes gradient {
+body::-webkit-scrollbar {
+  width: 3px;
+  background-color: #7999a9;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgba(42, 42, 42, 1);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(121, 153, 169, 0.8);
+}
+
+/* body {
+  background: linear-gradient(-90deg, #b3b2b2, #7999a9, #7999a9, #b6b6b680);
+  background-size: 300% 300%;
+  animation: gradient 15s ease infinite;
+} */
+/* 
+@keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
@@ -190,3 +196,11 @@ body {
     background-position: 0% 50%;
   }
 } */
+
+.page {
+  background-color: rgba(42, 42, 42, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
