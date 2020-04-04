@@ -36,24 +36,7 @@ class App extends Component {
         >
           {(state) => <Navigation onToggle={this.handleToggle} />}
         </CSSTransition>
-        {/* {routes.map(({ path, Component }) => (
-          <Route key={path} exact path={path}>
-            {({ match }) => (
-              <CSSTransition
-                in={match}
-                timeout={5000}
-                classNames={opacityTransitions}
-                unmountOnExit
-              >
-                <Component />
-              </CSSTransition>
-            )}
-          </Route>
-        ))} */}
-        {/* <Switch> */}
-        {/* <Switch> */}
 
-        ~~
         <Route path="/" exact>
           {({ match }) => {
             console.log(match);
