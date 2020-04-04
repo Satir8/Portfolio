@@ -3,7 +3,7 @@
   justify-content: center;
   flex-wrap: wrap;
   min-height: 100vh;
-  /* background-color: rgba(42, 42, 42, 0.8); */
+  background-color: rgba(42, 42, 42, 0.8);
 }
 .contentWrapper {
   width: 100%;
@@ -247,7 +247,7 @@
   position: relative;
   font-size: 14px;
   font-weight: 700;
-  color: rgba(231, 255, 32, 0.78);
+  color: rgba(231, 255, 32, 0.7);
   overflow: hidden;
   vertical-align: middle;
   padding: 0px 1px;

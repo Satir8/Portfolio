@@ -27,14 +27,16 @@ class App extends Component {
     return (
       <>
         <Burger isActive={isActive} onToggle={this.handleToggle} />
-        <CSSTransition
-          in={isActive}
-          timeout={450}
-          classNames={slideTransitions}
-          unmountOnExit
-        >
-          {(state) => <Navigation onToggle={this.handleToggle} />}
-        </CSSTransition>
+        <header>
+          <CSSTransition
+            in={isActive}
+            timeout={450}
+            classNames={slideTransitions}
+            unmountOnExit
+          >
+            {(state) => <Navigation onToggle={this.handleToggle} />}
+          </CSSTransition>
+        </header>
         <Route
           render={({ location }) => (
             <TransitionGroup component="main" className="page">

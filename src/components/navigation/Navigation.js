@@ -11,7 +11,7 @@ class Navigation extends Component {
     window.removeEventListener("keydown", this.handleKeyPress);
   }
 
-  handleKeyPress = e => {
+  handleKeyPress = (e) => {
     const { onToggle } = this.props;
     e.code === "Escape" && onToggle();
   };
