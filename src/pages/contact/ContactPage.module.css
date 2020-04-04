@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgba(42, 42, 42, 1);
+  /* background-color: rgba(42, 42, 42, 0.8); */
 }
 
 .contentWrapper {

@@ -1,4 +1,4 @@
-import React, { Component, Suspense } from "react";
+import React, { Component } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Route, Switch } from "react-router-dom";
 import Burger from "./components/burger/Burger";
@@ -7,14 +7,14 @@ import WelcomePage from "./pages/welcome/WelcomePage";
 import PortfolioPage from "./pages/portfolio/Portfolio";
 import ContactPage from "./pages/contact/ContactPage";
 import slideTransitions from "./transitions/slideTransitions.module.css";
-import opacityTransitions from "./transitions/opacityTransitions.module.css";
+import pageTransitions from "./transitions/pageOpacityTransitions.module.css";
 import "./App.css";
 
-// const routes = [
-//   { path: "/", name: "Welcome", Component: WelcomePage },
-//   { path: "/portfolio", name: "Portfolio", Component: PortfolioPage },
-//   { path: "/contact", name: "Contact", Component: ContactPage }
-// ];
+const routes = [
+  { path: "/", name: "Welcome", Component: WelcomePage },
+  { path: "/portfolio", name: "Portfolio", Component: PortfolioPage },
+  { path: "/contact", name: "Contact", Component: ContactPage },
+];
 
 class App extends Component {
   state = { isActive: false };
@@ -23,10 +23,9 @@ class App extends Component {
     this.setState((prev) => ({ isActive: !prev.isActive }));
   };
   render() {
-    const { isActive, isRoute } = this.state;
+    const { isActive } = this.state;
     return (
       <>
-        {/* <Suspense fallback={""}> */}
         <Burger isActive={isActive} onToggle={this.handleToggle} />
         <CSSTransition
           in={isActive}
@@ -36,58 +35,23 @@ class App extends Component {
         >
           {(state) => <Navigation onToggle={this.handleToggle} />}
         </CSSTransition>
-
-        <Route path="/" exact>
-          {({ match }) => {
-            console.log(match);
-            console.log(match != null);
-            return (
+        <Route
+          render={({ location }) => (
+            <TransitionGroup component="main" className="page">
               <CSSTransition
-                in={match != null}
+                key={location.key}
                 timeout={1200}
-                classNames={opacityTransitions}
-                unmountOnExit
+                classNames={pageTransitions}
               >
-                <WelcomePage />
+                <Switch location={location}>
+                  {routes.map(({ path, Component }) => (
+                    <Route key={path} exact path={path} component={Component} />
+                  ))}
+                </Switch>
               </CSSTransition>
-            );
-          }}
-        </Route>
-        <Route path="/portfolio">
-          {({ match }) => {
-            console.log(match);
-            console.log(match != null);
-            return (
-              <CSSTransition
-                in={match != null}
-                timeout={1200}
-                classNames={opacityTransitions}
-                unmountOnExit
-              >
-                <PortfolioPage />
-              </CSSTransition>
-            );
-          }}
-        </Route>
-        <Route path="/contact">
-          {({ match }) => {
-            console.log(match);
-            console.log(match != null);
-            return (
-              <CSSTransition
-                in={match != null}
-                timeout={1200}
-                classNames={opacityTransitions}
-                unmountOnExit
-              >
-                <ContactPage />
-              </CSSTransition>
-            );
-          }}
-        </Route>
-
-        {/* </Switch> */}
-        {/* </Suspense> */}
+            </TransitionGroup>
+          )}
+        />
       </>
     );
   }
