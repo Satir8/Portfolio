@@ -313,3 +313,9 @@
     width: 280px;
   }
 }
+
+@media (min-width: 1440px) {
+  .welcome__pageWrapper {
+    padding: 24px 0px 10px;
+  }
+}

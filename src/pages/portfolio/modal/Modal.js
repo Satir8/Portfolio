@@ -3,6 +3,7 @@ import { CSSTransition } from "react-transition-group";
 import sprite from "../../../img/icons/sprite.svg";
 import styles from "./Modal.module.css";
 import opacityTransitions from "../../../transitions/opacityTransitions.module.css";
+import listItemTransitions from "../../../transitions/listItemTransitions.module.css";
 
 class Modal extends Component {
   overlayRef = createRef();
@@ -45,6 +46,7 @@ class Modal extends Component {
       nextObjTitle,
       prevObjTitle,
       isMount,
+      isNewImg,
     } = this.props;
     const { title, url, img, tags, description } = data;
     const { isArrowsMount } = this.state;
@@ -83,7 +85,7 @@ class Modal extends Component {
           </div>
           <CSSTransition
             in={isMount}
-            timeout={600}
+            timeout={1500}
             classNames={opacityTransitions}
             unmountOnExit
           >
@@ -107,7 +109,11 @@ class Modal extends Component {
                 {description}
                 <span>Pet project.</span>
               </p>
-
+              {/* <CSSTransition
+                in={isNewImg}
+                timeout={600}
+                classNames={listItemTransitions}
+              > */}
               <div className={styles.modal__imgWrapper}>
                 <a
                   href={url}
@@ -127,6 +133,7 @@ class Modal extends Component {
                   </div>
                 </a>
               </div>
+              {/* </CSSTransition> */}
               <h2 className={styles.modal__subTitle}>Technical Sheet</h2>
               <p className={styles.modal__description}>
                 Code technologies I got involved with while working on this

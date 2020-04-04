@@ -349,9 +349,15 @@
   }
   .inlineArrowWrapper:nth-child(1) {
     width: 110px;
+    transform: translateX(-260%);
   }
   .inlineArrowWrapper:nth-child(2) {
     width: 126px;
+    transform: translateX(250%);
+  }
+
+  .arrowWrapper .active {
+    transform: translateX(0%);
   }
 
   .modal__arrows {

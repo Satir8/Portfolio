@@ -51,7 +51,7 @@
 .message__link {
   display: inline-block;
   position: relative;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
   color: rgba(231, 255, 32, 0.7);
   overflow: hidden;
@@ -76,7 +76,7 @@
 }
 
 .message__link:hover::before {
-  transform: translateX(3%);
+  transform: translateX(0%);
   opacity: 1;
 }
 
@@ -181,6 +181,7 @@
   }
 
   .contact__heading {
+    font-size: 42px;
     text-align: center;
   }
 
@@ -201,6 +202,55 @@
 
   .message__social {
     padding: 5.5px 12px;
+  }
+
+  .icons {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+  }
+
+  .manyThanks {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pageWrapper {
+    padding: 90px 0px;
+  }
+
+  .contentWrapper {
+    max-width: 500px;
+    padding: 90px 20px 0px;
+  }
+
+  .contact__heading {
+    text-align: center;
+  }
+
+  .contact__heading::after {
+    margin: 0 auto;
+    margin-top: 8px;
+  }
+
+  .contact__message {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .message__link {
+    font-size: 20px;
+  }
+
+  .message__socialWrapper {
+    margin: 0 auto;
+    width: 240px;
+    margin-bottom: 20px;
+  }
+
+  .message__social {
+    padding: 6px 14px;
   }
 
   .icons {
