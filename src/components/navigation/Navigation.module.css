@@ -69,7 +69,7 @@
   font-size: 32px;
   line-height: 1.08;
   font-weight: 700;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   text-transform: lowercase;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   -webkit-transition-property: color;

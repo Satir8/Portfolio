@@ -313,7 +313,7 @@
   display: block;
 }
 .message__link {
-  display: inline-block;
+  display: block;
   font-size: 14px;
   font-weight: 700;
   color: rgba(231, 255, 32, 0.7);
@@ -378,6 +378,7 @@
     line-height: 1.45em;
   }
   .message__link {
+    display: inline-block;
     font-size: 16px;
   }
 }
@@ -421,7 +422,7 @@
     position: relative;
     overflow: hidden;
     vertical-align: middle;
-    margin-bottom: 5px;
+    margin-bottom: 3.5px;
   }
 
   .message__link::before {

@@ -145,7 +145,7 @@ class Portfolio extends Component {
                     g.iakovyna@gmail.com
                   </a>
                 </span>{" "}
-                <span className={styles.contactSpan}>
+                <span>
                   Or get more contact information at the{" "}
                   <Link to="/contact" className={styles.message__link}>
                     contact page

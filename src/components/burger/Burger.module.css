@@ -8,7 +8,7 @@
   border-radius: 50%;
   padding: 10px;
   -webkit-box-shadow: 0 0 10px 0px rgba(141, 141, 141, 0.3);
-          box-shadow: 0 0 10px 0px rgba(141, 141, 141, 0.3);
+  box-shadow: 0 0 10px 0px rgba(141, 141, 141, 0.3);
   width: 59px;
   height: 59px;
   z-index: 999;
@@ -28,23 +28,23 @@
   transition-property: opacity, transform;
   transition-property: opacity, transform, -webkit-transform;
   -webkit-transition-timing-function: ease-in-out;
-       -o-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
   -webkit-transition-duration: 200ms;
-       -o-transition-duration: 200ms;
-          transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
 }
 
 .burger .activeSp1 {
   -webkit-transform: translate3d(0, 10px, 0) rotate(405deg) scale(1.3);
-          transform: translate3d(0, 10px, 0) rotate(405deg) scale(1.3);
+  transform: translate3d(0, 10px, 0) rotate(405deg) scale(1.3);
 }
 .burger .activeSp2 {
   opacity: 0;
 }
 .burger .activeSp3 {
   -webkit-transform: translate3d(0, -10px, 0) rotate(135deg) scale(1.3);
-          transform: translate3d(0, -10px, 0) rotate(135deg) scale(1.3);
+  transform: translate3d(0, -10px, 0) rotate(135deg) scale(1.3);
 }
 
 @media (min-width: 768px) {
@@ -55,7 +55,7 @@
     background-color: unset;
     border-radius: unset;
     -webkit-box-shadow: unset;
-            box-shadow: unset;
+    box-shadow: unset;
     width: 70px;
   }
 
@@ -72,33 +72,33 @@
 
   .burger .activeSp1 {
     -webkit-transform: translate3d(0, 11px, 0) rotate(45deg) scale(1.1);
-            transform: translate3d(0, 11px, 0) rotate(45deg) scale(1.1);
+    transform: translate3d(0, 11px, 0) rotate(45deg) scale(1.1);
   }
   .burger .activeSp2 {
     opacity: 0;
   }
   .burger .activeSp3 {
     -webkit-transform: translate3d(0, -10px, 0) rotate(-45deg) scale(1.1);
-            transform: translate3d(0, -10px, 0) rotate(-45deg) scale(1.1);
+    transform: translate3d(0, -10px, 0) rotate(-45deg) scale(1.1);
   }
 
   .burger:hover .notActiveSp1 {
     -webkit-transform: translate3d(0, -4px, 0);
-            transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
   }
 
   .burger:hover .notActiveSp3 {
     -webkit-transform: translate3d(0, 4px, 0);
-            transform: translate3d(0, 4px, 0);
+    transform: translate3d(0, 4px, 0);
   }
 
   .burger:hover .activeSp1 {
     -webkit-transform: translate3d(0, 10px, 0) rotate(235deg) scale(1.1);
-            transform: translate3d(0, 10px, 0) rotate(235deg) scale(1.1);
+    transform: translate3d(0, 10px, 0) rotate(235deg) scale(1.1);
   }
 
   .burger:hover .activeSp3 {
     -webkit-transform: translate3d(0, -10px, 0) rotate(125deg) scale(1.1);
-            transform: translate3d(0, -10px, 0) rotate(125deg) scale(1.1);
+    transform: translate3d(0, -10px, 0) rotate(125deg) scale(1.1);
   }
 }
