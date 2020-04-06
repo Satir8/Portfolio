@@ -6,9 +6,9 @@ import Navigation from "./components/navigation/Navigation";
 import WelcomePage from "./pages/welcome/WelcomePage";
 import PortfolioPage from "./pages/portfolio/Portfolio";
 import ContactPage from "./pages/contact/ContactPage";
+import "./App.css";
 import slideTransitions from "./transitions/slideTransitions.module.css";
 import pageTransitions from "./transitions/pageOpacityTransitions.module.css";
-import "./App.css";
 
 const routes = [
   { path: "/", name: "Welcome", Component: WelcomePage },
@@ -37,23 +37,30 @@ class App extends Component {
             {(state) => <Navigation onToggle={this.handleToggle} />}
           </CSSTransition>
         </header>
-        <Route
-          render={({ location }) => (
-            <TransitionGroup component="main" className="page">
-              <CSSTransition
-                key={location.key}
-                timeout={1200}
-                classNames={pageTransitions}
-              >
-                <Switch location={location}>
-                  {routes.map(({ path, Component }) => (
-                    <Route key={path} exact path={path} component={Component} />
-                  ))}
-                </Switch>
-              </CSSTransition>
-            </TransitionGroup>
-          )}
-        />
+        <main>
+          <Route
+            render={({ location }) => (
+              <TransitionGroup className="page">
+                <CSSTransition
+                  key={location.key}
+                  timeout={1200}
+                  classNames={pageTransitions}
+                >
+                  <Switch>
+                    {routes.map(({ path, Component }) => (
+                      <Route
+                        key={path}
+                        exact
+                        path={path}
+                        component={Component}
+                      />
+                    ))}
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+            )}
+          />
+        </main>
       </>
     );
   }
