@@ -18,7 +18,7 @@ class WelcomePage extends Component {
               <div className={styles.welcome__overlay}></div>
             </div>
             <h1 className={styles.welcome__mainTitle}>
-              Hi, I'm Gregory, frontend developer
+              Hi, I'm Gregory, <span>frontend developer</span>
             </h1>
             <h2 className={styles.welcome__mainSubtitle}>
               Well skilled in frontend and improving my mastery every day

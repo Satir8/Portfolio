@@ -1,7 +1,15 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+
 .pageNav {
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: #333333;
   width: 100%;
@@ -12,26 +20,49 @@
 .pageNav__list {
   width: 80%;
   height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
   background-color: rgba(44, 44, 44, 0.15);
 }
 
 .pageNav__listItem {
   height: 33%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-transition-property: background-color;
+  -o-transition-property: background-color;
   transition-property: background-color;
+  -webkit-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
   transition-duration: 300ms;
 }
 
 .navLink {
   height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-family: "Montserrat", Tahoma, Verdana, sans-serif;
   color: rgba(182, 182, 182, 0.6);
@@ -41,7 +72,11 @@
   letter-spacing: -2px;
   text-transform: lowercase;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  -webkit-transition-property: color;
+  -o-transition-property: color;
   transition-property: color;
+  -webkit-transition-duration: 350ms;
+  -o-transition-duration: 350ms;
   transition-duration: 350ms;
 }
 

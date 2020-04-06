@@ -87,21 +87,5 @@
     "img": "PictureCollectionSlider.jpg",
     "tags": ["HTML5", "CSS3", "Vanilla JS", "JSON"],
     "description": "Picture slider shows you a collection of pictures. Choose any of them and switch with the keyboard arrows."
-  },
-  {
-    "title": "Countdown timer",
-    "preview": "CountdownTimer@0,5x.jpg",
-    "url": "https://satir8.github.io/Countdown_timer",
-    "img": "CountdownTimer.jpg",
-    "tags": ["HTML5", "CSS3", "Vanilla JS"],
-    "description": "With the countdown timer, you can see how fast the time is passing and the next year is getting closer."
-  },
-  {
-    "title": "Mogo",
-    "preview": "Mogo@0,5x.jpg",
-    "url": "https://satir8.github.io/Mogo",
-    "img": "Mogo.jpg",
-    "tags": ["HTML5", "SASS", "Gulp"],
-    "description": "Mogo is the one-page website which has some cute transitions."
   }
 ]
