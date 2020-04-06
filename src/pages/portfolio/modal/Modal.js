@@ -85,7 +85,7 @@ class Modal extends Component {
           </div>
           <CSSTransition
             in={isMount}
-            timeout={1500}
+            timeout={1700}
             classNames={opacityTransitions}
             unmountOnExit
           >

@@ -35,7 +35,7 @@ class Portfolio extends Component {
           nextObjTitle: data[nextObj].title,
           isMount: true,
         });
-      }, 800);
+      }, 600);
     }
   }
 
